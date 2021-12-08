@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="WildfireAnalysisAndPredictionSystem.test2">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="W.A.P.S."
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Test2">
+        <activity
+            android:name=".SettingsPageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WildfireAddingPageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".FriendsPageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SearchPageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ArticlesPageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainMenuActivity"
+            android:exported="true" />
+        <activity
+            android:name=".GuidePageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SignUpPageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
