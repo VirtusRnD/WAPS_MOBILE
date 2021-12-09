@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="#5a5a5a"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/menu_articles"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/ic_android_article" />
+
+    <ImageButton
+        android:id="@+id/menu_search"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/ic_android_search" />
+
+    <ImageButton
+        android:id="@+id/menu_main"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/ic_android_home_page" />
+
+    <ImageButton
+        android:id="@+id/menu_friends"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/ic_android_friends" />
+
+    <ImageButton
+        android:id="@+id/menu_wildfire_adding"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/ic_android_fire" />
+
+</LinearLayout>

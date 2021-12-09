@@ -23,52 +23,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <LinearLayout
+    <include
         android:id="@+id/menu_bar"
+        layout="@layout/menu_bar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageButton
-            android:id="@+id/menu_articles"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
-        <ImageButton
-            android:id="@+id/menu_search"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
-        <ImageButton
-            android:id="@+id/menu_main"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
-        <ImageButton
-            android:id="@+id/menu_friends"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
-        <ImageButton
-            android:id="@+id/menu_wildfire_adding"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
-
-
-    </LinearLayout>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

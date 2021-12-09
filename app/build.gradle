@@ -6,6 +6,8 @@ android {
     compileSdk 31
 
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+
         applicationId "WildfireAnalysisAndPredictionSystem.test2"
         minSdk 29
         targetSdk 31
@@ -29,7 +31,7 @@ android {
 }
 
 dependencies {
-
+    implementation 'com.android.support:appcompat-v7:23.2.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
