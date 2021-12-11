@@ -1,19 +1,28 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class FriendsPageActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class FriendsPageActivity extends AppCompatActivity {
+    private ArrayList<Friend> friends;
+    private RecyclerView recyclerView;
+    private FriendRecyclerViewAdapter friendRecyclerViewAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friends_page);
 
+        viewSettings();
+        fillTheArray();
+        friendRecyclerViewAdapter.notifyDataSetChanged();
         ImageView article_menu_director = findViewById(R.id.menu_articles);
         article_menu_director.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,5 +55,19 @@ public class FriendsPageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void fillTheArray() {
+
+
+        //TODO solve the problem in the Friends adapter class then fill this code block by getting data from the firebase.
+    }
+
+    private void viewSettings() {
+        recyclerView = findViewById(R.id.friend_list);
+        friends = new ArrayList<>();
+        friendRecyclerViewAdapter = new FriendRecyclerViewAdapter(friends);
+        recyclerView.setAdapter(friendRecyclerViewAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }

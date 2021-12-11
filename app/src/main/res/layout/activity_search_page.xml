@@ -63,7 +63,7 @@
                     app:layout_constraintEnd_toEndOf="@id/constraint_layout1"/>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/fav_county_list"
+                    android:id="@+id/friend_list"
                     android:layout_width="0dp"
                     android:layout_height="200dp"
                     android:background="@drawable/box_green"
