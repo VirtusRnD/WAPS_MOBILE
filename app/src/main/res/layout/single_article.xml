@@ -9,6 +9,7 @@
         android:id="@+id/txtTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:clickable="true"
         android:text="TextView"
         android:textSize="24dp"
         app:layout_constraintBottom_toTopOf="@+id/txtAuthors"

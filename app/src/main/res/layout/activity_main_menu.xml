@@ -8,11 +8,14 @@
 
     <ScrollView
         android:id="@+id/scroll_view"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/menu_bar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -24,9 +27,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_android_settings"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/ic_android_settings" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/not_hist_title"
@@ -40,18 +43,21 @@
                 app:layout_constraintBottom_toTopOf="@+id/not_hist"
                 app:layout_constraintLeft_toLeftOf="@id/not_hist" />
 
-            <ScrollView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/not_hist"
 
-                android:background="@drawable/box_green"
                 android:layout_width="320dp"
                 android:layout_height="200dp"
-
                 android:layout_marginLeft="45dp"
-                android:layout_marginTop="80dp"
 
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="45dp"
+
+                android:background="@drawable/box_green"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
 
             <TextView
                 android:id="@+id/daily_wildf_title"
@@ -68,13 +74,15 @@
                 app:layout_constraintLeft_toLeftOf="@id/not_hist"
                 app:layout_constraintTop_toBottomOf="@id/not_hist" />
 
-            <ScrollView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/daily_wildf"
 
+                android:layout_width="315dp"
+                android:layout_height="303dp"
                 android:background="@drawable/box_green"
-                android:layout_width="320dp"
-                android:layout_height="300dp"
 
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/not_hist"
                 app:layout_constraintLeft_toLeftOf="@id/not_hist"
                 app:layout_constraintTop_toBottomOf="@id/daily_wildf_title" />
 

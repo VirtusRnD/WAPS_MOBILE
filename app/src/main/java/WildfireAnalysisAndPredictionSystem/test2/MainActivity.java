@@ -3,6 +3,7 @@ package WildfireAnalysisAndPredictionSystem.test2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.sax.StartElementListener;
 import android.view.View;
@@ -24,13 +25,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        
+
         Button main_menu_director = findViewById(R.id.button_sign_in);
         main_menu_director.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MainMenuActivity.class);
                 startActivity(intent);
+
+
             }
         });
     }

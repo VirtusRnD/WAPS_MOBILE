@@ -15,9 +15,10 @@ import java.util.ArrayList;
 
 public class ArticleRecyclerViewAdapter extends RecyclerView.Adapter<ArticleRecyclerViewAdapter.MyViewHolder> {
     private ArrayList<Article> articles;
-
-    public ArticleRecyclerViewAdapter(ArrayList<Article> articles) {
+    private OnArticleListener onArticleListener;
+    public ArticleRecyclerViewAdapter(ArrayList<Article> articles,OnArticleListener onArticleListener) {
         this.articles = articles;
+        this.onArticleListener = onArticleListener;
     }
 
     @NonNull
@@ -25,31 +26,42 @@ public class ArticleRecyclerViewAdapter extends RecyclerView.Adapter<ArticleRecy
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_article,parent,false);
 
-        return new MyViewHolder(view);
+        return new MyViewHolder(view,onArticleListener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.title.setText(articles.get(position).getTitle());
-        holder.title.setText(articles.get(position).getAuthors());
+        holder.authors.setText(articles.get(position).getAuthors());
 
 
     }
+
 
     @Override
     public int getItemCount() {
         return articles.size();
     }
 
-    public class MyViewHolder extends  RecyclerView.ViewHolder{
+    public class MyViewHolder extends  RecyclerView.ViewHolder implements View.OnClickListener {
         TextView authors,title;
+        OnArticleListener onArticleListener;
 
-
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView ,OnArticleListener onArticleListener) {
             super(itemView);
             authors = itemView.findViewById(R.id.txtAuthors);
             title = itemView.findViewById(R.id.txtTitle);
+            this.onArticleListener=onArticleListener;
 
+            title.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            onArticleListener.onArticleClick(getAdapterPosition());
+        }
+    }
+    public interface OnArticleListener{
+        void onArticleClick(int position);
     }
 }
