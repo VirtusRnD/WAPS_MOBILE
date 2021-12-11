@@ -13,18 +13,28 @@
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/il/app/src/main/res/layout/activity_sign_up_page.xml" value="0.2" />
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/il/app/src/main/res/layout/activity_wildfire_adding_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/il/app/src/main/res/layout/fragment_article.xml" value="0.25416666666666665" />
+        <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/drawable/article_red.xml" value="0.2703125" />
+        <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/drawable/box.xml" value="0.2703125" />
+        <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/drawable/box_green.xml" value="0.2703125" />
+        <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/drawable/box_red.xml" value="0.2703125" />
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/drawable/ic_android_article.xml" value="0.2703125" />
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/drawable/ic_android_black_24dp.xml" value="0.14635416666666667" />
+        <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/drawable/ic_android_calendar.xml" value="0.2703125" />
+        <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/drawable/ic_android_clock.xml" value="0.2703125" />
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/drawable/ic_android_fire.xml" value="0.2703125" />
+        <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/drawable/ic_android_friends.xml" value="0.2703125" />
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/drawable/ic_android_home_page.xml" value="0.2703125" />
+        <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/drawable/ic_android_rectangle.xml" value="0.2703125" />
+        <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/drawable/ic_android_search.xml" value="0.2703125" />
+        <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/drawable/ic_android_settings.xml" value="0.2703125" />
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/drawable/ic_black_background_background.xml" value="0.14635416666666667" />
-        <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/layout/activity_articles_page.xml" value="0.25025641025641027" />
+        <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/layout/activity_articles_page.xml" value="0.264" />
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/layout/activity_friends_page.xml" value="0.25025641025641027" />
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/layout/activity_guide_page.xml" value="0.25025641025641027" />
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/layout/activity_main_menu.xml" value="0.264" />
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/layout/activity_search_page.xml" value="0.264" />
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/layout/activity_settings_page.xml" value="0.25025641025641027" />
-        <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/layout/activity_wildfire_adding_page.xml" value="0.25025641025641027" />
+        <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/layout/activity_wildfire_adding_page.xml" value="0.264" />
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/layout/menu_bar.xml" value="0.4" />
       </map>
     </option>

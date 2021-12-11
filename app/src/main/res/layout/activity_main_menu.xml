@@ -20,21 +20,21 @@
 
             <ImageButton
                 android:id="@+id/button_settings"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:src="@drawable/ic_android_settings" />
 
             <TextView
                 android:id="@+id/not_hist_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-
-                android:text="Notification History"
+                android:background="@drawable/box_red"
+                android:text=" Notification History "
                 android:textSize="16sp"
 
                 app:layout_constraintBottom_toTopOf="@+id/not_hist"
@@ -43,6 +43,7 @@
             <ScrollView
                 android:id="@+id/not_hist"
 
+                android:background="@drawable/box_green"
                 android:layout_width="320dp"
                 android:layout_height="200dp"
 
@@ -60,7 +61,8 @@
 
                 android:layout_marginTop="20dp"
 
-                android:text="Daily Wildfires"
+                android:background="@drawable/box_red"
+                android:text=" Daily Wildfires "
                 android:textSize="16sp"
 
                 app:layout_constraintLeft_toLeftOf="@id/not_hist"
@@ -69,6 +71,7 @@
             <ScrollView
                 android:id="@+id/daily_wildf"
 
+                android:background="@drawable/box_green"
                 android:layout_width="320dp"
                 android:layout_height="300dp"
 

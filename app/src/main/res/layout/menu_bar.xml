@@ -12,34 +12,39 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:src="@drawable/ic_android_article" />
+        android:src="@drawable/ic_android_article"
+        app:tint="#30c060" />
 
     <ImageButton
         android:id="@+id/menu_search"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:src="@drawable/ic_android_search" />
+        android:src="@drawable/ic_android_search"
+        app:tint="#30c060"/>
 
     <ImageButton
         android:id="@+id/menu_main"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:src="@drawable/ic_android_home_page" />
+        android:src="@drawable/ic_android_home_page"
+        app:tint="#ff4c38"/>
 
     <ImageButton
         android:id="@+id/menu_friends"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:src="@drawable/ic_android_friends" />
+        android:src="@drawable/ic_android_friends"
+        app:tint="#30c060"/>
 
     <ImageButton
         android:id="@+id/menu_wildfire_adding"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:src="@drawable/ic_android_fire" />
+        android:src="@drawable/ic_android_fire"
+        app:tint="#30c060"/>
 
 </LinearLayout>
