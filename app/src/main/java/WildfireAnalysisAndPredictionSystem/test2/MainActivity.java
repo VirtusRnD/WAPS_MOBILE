@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        
         Button main_menu_director = findViewById(R.id.button_sign_in);
         main_menu_director.setOnClickListener(new View.OnClickListener() {
             @Override
