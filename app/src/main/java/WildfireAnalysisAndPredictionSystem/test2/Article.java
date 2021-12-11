@@ -9,6 +9,7 @@ public class Article {
         this.authors = authors;
         this.title = title;
         this.link = link;
+        //test1
     }
 
     public String getAuthors() {

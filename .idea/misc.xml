@@ -36,6 +36,7 @@
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/layout/activity_settings_page.xml" value="0.25025641025641027" />
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/layout/activity_wildfire_adding_page.xml" value="0.264" />
         <entry key="..\:/Grade 3 Semester 1/Mobile Application Developement/Final (Wildfire Prediction and Analysis System)/Phase 3/phase3/app/src/main/res/layout/menu_bar.xml" value="0.4" />
+        <entry key="..\:/Users/mehme/Desktop/New folder/FinalProject/app/src/main/res/layout/activity_articles_page.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/layout/activity_articles_page.xml" value="0.22407407407407406" />
         <entry key="app/src/main/res/layout/activity_friends_page.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_guide_page.xml" value="0.3098958333333333" />
@@ -46,7 +47,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
