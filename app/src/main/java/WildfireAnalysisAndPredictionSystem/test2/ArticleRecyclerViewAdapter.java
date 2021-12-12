@@ -1,24 +1,31 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
+
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
-public class ArticleRecyclerViewAdapter extends RecyclerView.Adapter<ArticleRecyclerViewAdapter.MyViewHolder> {
-    private ArrayList<Article> articles;
+public class ArticleRecyclerViewAdapter extends RecyclerView.Adapter<ArticleRecyclerViewAdapter.MyViewHolder> implements Filterable {
+    private List<Article> articles;
     private OnArticleListener onArticleListener;
+    private List<Article> allArticle;
     public ArticleRecyclerViewAdapter(ArrayList<Article> articles,OnArticleListener onArticleListener) {
         this.articles = articles;
         this.onArticleListener = onArticleListener;
+        this.allArticle = new ArrayList<Article>(articles);
     }
 
     @NonNull
@@ -42,6 +49,54 @@ public class ArticleRecyclerViewAdapter extends RecyclerView.Adapter<ArticleRecy
     public int getItemCount() {
         return articles.size();
     }
+
+    @Override
+    public Filter getFilter() {
+
+        return filter;
+    }
+
+    Filter filter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            Log.d("ARTICLE PAGE","F1" +articles.size() );
+            List<Article> filteredArticle = new ArrayList<>();
+            if (charSequence.toString().isEmpty()){
+                filteredArticle.addAll(allArticle);
+                Log.d("ARTICLE PAGE","Freturn" +allArticle );
+                Log.d("ARTICLE PAGE","Fif  " +articles.size()  );
+            }else{
+                Log.d("ARTICLE PAGE","Felse" +articles.size() );
+                for (Article article: allArticle) {
+                    Log.d("ARTICLE PAGE","Ffor" +articles.size() );
+                    if((article.getTitle().toLowerCase().contains(charSequence.toString().toLowerCase()))
+                            ||(article.getAuthors().toLowerCase().contains(charSequence.toString().toLowerCase()))){
+                        Log.d("ARTICLE PAGE","Fforif" +articles.size() );
+                        filteredArticle.add(article);
+                    }
+                }
+            }
+
+            FilterResults filterResults = new FilterResults();
+            Log.d("ARTICLE PAGE","Freturn" +filteredArticle );
+            filterResults.values = filteredArticle;
+            Log.d("ARTICLE PAGE","Freturn" +filterResults.values );
+            Log.d("ARTICLE PAGE","Freturn" +articles.size() );
+            return filterResults;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            Log.d("ARTICLE PAGE","Pbc" +articles.size() );
+            articles.clear();
+            Log.d("ARTICLE PAGE","Pac" +articles.size() );
+            articles.addAll((Collection<? extends Article>) filterResults.values);
+            Log.d("ARTICLE PAGE","PaddAll" +articles.size() );
+            notifyDataSetChanged();
+            Log.d("ARTICLE PAGE","Pnotify" +articles.size() );
+
+        }
+    };
 
     public class MyViewHolder extends  RecyclerView.ViewHolder implements View.OnClickListener {
         TextView authors,title;
