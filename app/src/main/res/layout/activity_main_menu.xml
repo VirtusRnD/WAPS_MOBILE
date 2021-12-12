@@ -41,7 +41,7 @@
                 android:textSize="16sp"
 
                 app:layout_constraintBottom_toTopOf="@+id/not_hist"
-                app:layout_constraintLeft_toLeftOf="@id/not_hist" />
+                app:layout_constraintStart_toStartOf="@id/not_hist" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/not_hist"
