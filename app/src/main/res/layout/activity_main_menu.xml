@@ -41,21 +41,21 @@
                 android:textSize="16sp"
 
                 app:layout_constraintBottom_toTopOf="@+id/not_hist"
-                app:layout_constraintLeft_toLeftOf="@id/not_hist" />
+                app:layout_constraintStart_toStartOf="@id/not_hist" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/not_hist"
 
                 android:layout_width="320dp"
                 android:layout_height="200dp"
-                android:layout_marginLeft="45dp"
+                android:layout_marginStart="45dp"
 
                 android:layout_marginTop="80dp"
                 android:layout_marginEnd="45dp"
 
                 android:background="@drawable/box_green"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
