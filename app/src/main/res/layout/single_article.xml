@@ -12,6 +12,8 @@
         android:clickable="true"
         android:text="TextView"
         android:textSize="24dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
         app:layout_constraintBottom_toTopOf="@+id/txtAuthors"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,8 +24,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@id/txtDate"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/txtTitle"
         app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@id/txtTitle"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
 </androidx.constraintlayout.widget.ConstraintLayout>

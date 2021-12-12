@@ -74,27 +74,23 @@ public class ArticlesPageActivity extends AppCompatActivity implements ArticleRe
     }
 
     private void fillTheArray() {
-        articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr"));
-        articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr")); articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr"));
-        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr"));
+        articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr",2006));
+        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr",2004));articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr",2006));
+        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr",2004));articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr",2006));
+        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr",2004));articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr",2006));
+        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr",2004));articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr",2006));
+        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr",2004));articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr",2006));
+        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr",2004));articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr",2006));
+        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr",2004));articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr",2006));
+        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr",2004));articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr",2006));
+        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr",2004));articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr",2006));
+        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr",2004));articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr",2006));
+        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr",2004));articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr",2006));
+        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr",2004));articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr",2006));
+        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr",2004));articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr",2006));
+        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr",2004));articles.add(new Article("Mehmet Kadri Gofralılar","Orman yangınlarını tahminleme","https://mkgofralilar.com.tr",2006));
+        articles.add(new Article("Hasan Ali Özkan","Orman yangınlarını tahminleme","https://haozkan.com.tr",2004));
+
     }
 
     private void viewSettings() {
@@ -123,6 +119,7 @@ public class ArticlesPageActivity extends AppCompatActivity implements ArticleRe
         getMenuInflater().inflate(R.menu.search_menu,menu);
         MenuItem searchItem = menu.findItem(R.id.search_action);
         androidx.appcompat.widget.SearchView searchView = (SearchView) searchItem.getActionView();
+        //TODO firstly the latest 25 or 50 article shown ins recycler-view searching actually will be done in firebase.
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

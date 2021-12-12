@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -56,5 +58,22 @@ public class MainMenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.settings_menu,menu);
+        MenuItem goto_settings = menu.findItem(R.id.settings);
+        goto_settings.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                Intent intent = new Intent(MainMenuActivity.this, SettingsPageActivity.class);
+                startActivity(intent);
+                //TODO buraya bir tane fragment ile yandan kayan menu eklenecek.
+                //TODO buradaki diğer settings buttonu değişecek.
+                return false;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 }

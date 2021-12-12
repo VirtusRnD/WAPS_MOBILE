@@ -40,6 +40,7 @@ public class ArticleRecyclerViewAdapter extends RecyclerView.Adapter<ArticleRecy
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.title.setText(articles.get(position).getTitle());
         holder.authors.setText(articles.get(position).getAuthors());
+        holder.date.setText(articles.get(position).getYear());
 
 
     }
@@ -70,7 +71,8 @@ public class ArticleRecyclerViewAdapter extends RecyclerView.Adapter<ArticleRecy
                 for (Article article: allArticle) {
                     Log.d("ARTICLE PAGE","Ffor" +articles.size() );
                     if((article.getTitle().toLowerCase().contains(charSequence.toString().toLowerCase()))
-                            ||(article.getAuthors().toLowerCase().contains(charSequence.toString().toLowerCase()))){
+                            ||(article.getAuthors().toLowerCase().contains(charSequence.toString().toLowerCase()))
+                            ||(article.getYear().toLowerCase().contains(charSequence.toString().toLowerCase()))){
                         Log.d("ARTICLE PAGE","Fforif" +articles.size() );
                         filteredArticle.add(article);
                     }
@@ -99,13 +101,14 @@ public class ArticleRecyclerViewAdapter extends RecyclerView.Adapter<ArticleRecy
     };
 
     public class MyViewHolder extends  RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView authors,title;
+        TextView authors,title,date;
         OnArticleListener onArticleListener;
 
         public MyViewHolder(@NonNull View itemView ,OnArticleListener onArticleListener) {
             super(itemView);
             authors = itemView.findViewById(R.id.txtAuthors);
             title = itemView.findViewById(R.id.txtTitle);
+            date = itemView.findViewById(R.id.txtDate);
             this.onArticleListener=onArticleListener;
 
             title.setOnClickListener(this);

@@ -4,12 +4,23 @@ public class Article {
     private String authors;
     private String title;
     private String link;
+    private int year;
 
-    public Article(String authors, String title, String link) {
+
+    public Article(String authors, String title, String link, int year) {
         this.authors = authors;
         this.title = title;
         this.link = link;
-        //test1
+        this.year = year;
+
+    }
+
+    public String getYear() {
+        return this.year + "";
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public String getAuthors() {
