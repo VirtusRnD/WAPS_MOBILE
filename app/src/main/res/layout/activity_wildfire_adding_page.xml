@@ -2,15 +2,19 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".WildfireAddingPageActivity">
 
 
     <ScrollView
         android:id="@+id/scroll_view"
+
         android:layout_width="match_parent"
         android:layout_height="0dp"
+
         app:layout_constraintBottom_toTopOf="@id/menu_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,51 +27,50 @@
 
             <TextView
                 android:id="@+id/search_county"
-
                 android:text="  County"
                 android:textSize="16dp"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"/>
 
             <EditText
                 android:id="@+id/search_county_input"
                 android:inputType="textPersonName"
-
                 android:hint="  County Name"
                 android:textSize="14dp"
 
                 android:background="@drawable/box_red"
+
                 android:layout_width="0dp"
                 android:layout_height="40dp"
 
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-
                 app:layout_constraintTop_toBottomOf="@+id/search_county"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp" />
 
             <TextView
                 android:id="@+id/date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
                 android:text="  Date"
                 android:textSize="16dp"
 
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
                 app:layout_constraintTop_toBottomOf="@id/search_county_input"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"/>
 
             <EditText
                 android:id="@+id/date_input"
@@ -75,40 +78,43 @@
                 android:textSize="14dp"
 
                 android:background="@drawable/box_green"
+
                 android:layout_width="0dp"
                 android:layout_height="40dp"
 
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-
                 app:layout_constraintTop_toBottomOf="@+id/date"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/search_button"/>
+                app:layout_constraintEnd_toStartOf="@id/search_button"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"/>
 
             <ImageButton
                 android:id="@+id/button_calendar"
+                android:src="@drawable/ic_android_calendar"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="16dp"
                 app:layout_constraintStart_toEndOf="@+id/date_input"
                 app:layout_constraintTop_toTopOf="@+id/date_input"
-                android:src="@drawable/ic_android_calendar" />
+
+                android:layout_marginStart="16dp" />
 
             <TextView
                 android:id="@+id/time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
                 android:text="  Time"
                 android:textSize="16dp"
 
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
                 app:layout_constraintTop_toBottomOf="@id/date_input"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp" />
 
             <EditText
                 android:id="@+id/time_input"
@@ -116,41 +122,46 @@
                 android:textSize="14dp"
 
                 android:background="@drawable/box_red"
+
                 android:layout_width="0dp"
                 android:layout_height="40dp"
 
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-
                 app:layout_constraintTop_toBottomOf="@+id/time"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/search_button"/>
+                app:layout_constraintEnd_toStartOf="@id/search_button"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp" />
 
             <ImageButton
                 android:id="@+id/button_clock"
+                android:src="@drawable/ic_android_clock"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="16dp"
                 app:layout_constraintStart_toEndOf="@+id/time_input"
                 app:layout_constraintTop_toTopOf="@+id/time_input"
-                android:src="@drawable/ic_android_clock" />
+
+                android:layout_marginStart="16dp" />
 
             <Button
                 android:id="@+id/search_button"
+                android:text="Search"
+                android:textSize="10dp"
+
+                android:textColor="#000000"
+                android:backgroundTint="#FF6700"
+
                 android:layout_width="80dp"
                 android:layout_height="40dp"
 
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="10dp"
-                android:backgroundTint="#FF6700"
-
-                android:text="Search"
-                android:textColor="#000000"
-                android:textSize="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/time_input" />
+                app:layout_constraintTop_toBottomOf="@id/time_input"
+
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -159,8 +170,10 @@
     <include
         android:id="@+id/menu_bar"
         layout="@layout/menu_bar"
+
         android:layout_width="match_parent"
         android:layout_height="70dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
