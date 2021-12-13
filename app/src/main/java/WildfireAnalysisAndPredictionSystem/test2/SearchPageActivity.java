@@ -98,6 +98,7 @@ public class SearchPageActivity extends AppCompatActivity implements CountyRecyc
 
     @Override
     public void onCountyClick(int position) {
+        //TODO When the button clicked the star will be changed with an inverse one.
         Log.d("SEARCH PAGE","Clicked" + position);
     }
 }

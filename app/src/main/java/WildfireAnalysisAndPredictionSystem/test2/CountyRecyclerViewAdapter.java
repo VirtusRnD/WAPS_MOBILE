@@ -1,5 +1,6 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,7 +62,10 @@ public class CountyRecyclerViewAdapter extends RecyclerView.Adapter<CountyRecycl
 
         @Override
         public void onClick(View view) {
+
+
             onCountyListener.onCountyClick(getAdapterPosition());
+            Log.d("Adapter","Clicked" +getAdapterPosition());
         }
     }
 
