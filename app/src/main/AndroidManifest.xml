@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="WildfireAnalysisAndPredictionSystem.test2">
+    package="WildfireAnalysisAndPredictionSystem.test2" >
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,12 @@
         android:label="Wildfire System"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Test2">
+        android:theme="@style/Theme.Test2" >
+        <activity
+            android:name=".SideBar"
+            android:exported="false"
+            android:label="@string/title_activity_side_bar"
+            android:theme="@style/Theme.Test2.NoActionBar" />
         <activity
             android:name=".SettingsPageActivity"
             android:exported="true" />
@@ -35,7 +40,7 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

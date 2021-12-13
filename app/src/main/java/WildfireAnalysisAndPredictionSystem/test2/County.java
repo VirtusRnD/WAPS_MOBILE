@@ -1,9 +1,8 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
 public class County {
-    public String countyName;
-    public Boolean isFav;
-//deneme yorum satırı
+    private String countyName;
+    private Boolean isFav;
     public County(String countyName, Boolean isFav) {
         this.countyName = countyName;
         this.isFav = isFav;

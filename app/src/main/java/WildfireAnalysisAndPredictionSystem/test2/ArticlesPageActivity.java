@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 
 import java.util.ArrayList;
@@ -45,6 +46,7 @@ public class ArticlesPageActivity extends AppCompatActivity implements ArticleRe
                 Intent intent = new Intent(ArticlesPageActivity.this, WildfireAddingPageActivity.class);
 
                 startActivity(intent);
+                finish();
             }
         });
         ImageView search_menu_director = findViewById(R.id.menu_search);
@@ -53,6 +55,8 @@ public class ArticlesPageActivity extends AppCompatActivity implements ArticleRe
             public void onClick(View view) {
                 Intent intent = new Intent(ArticlesPageActivity.this, SearchPageActivity.class);
                 startActivity(intent);
+                finish();
+
             }
         });
         ImageView friends_menu_director = findViewById(R.id.menu_friends);
@@ -61,6 +65,8 @@ public class ArticlesPageActivity extends AppCompatActivity implements ArticleRe
             public void onClick(View view) {
                 Intent intent = new Intent(ArticlesPageActivity.this, FriendsPageActivity.class);
                 startActivity(intent);
+                finish();
+
             }
         });
         ImageView main_menu_director = findViewById(R.id.menu_main);
@@ -69,6 +75,8 @@ public class ArticlesPageActivity extends AppCompatActivity implements ArticleRe
             public void onClick(View view) {
                 Intent intent = new Intent(ArticlesPageActivity.this, MainMenuActivity.class);
                 startActivity(intent);
+                finish();
+
             }
         });
     }
@@ -105,7 +113,7 @@ public class ArticlesPageActivity extends AppCompatActivity implements ArticleRe
 
     @Override
     public void onArticleClick(int position) {
-            Log.d("ARTICLE PAGE","Clicked" + position);
+        Log.d("ARTICLE PAGE","Clicked" + position);
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(this.articles.get(position).getLink()));
             startActivity(intent);
@@ -130,6 +138,9 @@ public class ArticlesPageActivity extends AppCompatActivity implements ArticleRe
             public boolean onQueryTextChange(String newText) {
                 articleRecyclerViewAdapter.getFilter().filter(newText);
                 Log.d("ARTICLE PAGE","ONQUERYTEXTCHANGE" );
+                if (articles.isEmpty()){
+                    Toast.makeText(ArticlesPageActivity.this,"We couldn't find any related article",Toast.LENGTH_SHORT).show();
+                }
                 return false;
             }
         });

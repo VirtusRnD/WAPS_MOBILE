@@ -76,7 +76,7 @@
                     android:layout_marginStart="10dp"/>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/friend_list"
+                    android:id="@+id/county_list"
                     android:background="@drawable/box_green"
 
                     android:layout_width="0dp"

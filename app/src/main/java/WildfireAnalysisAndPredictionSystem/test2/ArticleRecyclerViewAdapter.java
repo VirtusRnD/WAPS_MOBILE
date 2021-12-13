@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -93,6 +94,7 @@ public class ArticleRecyclerViewAdapter extends RecyclerView.Adapter<ArticleRecy
             articles.clear();
             Log.d("ARTICLE PAGE","Pac" +articles.size() );
             articles.addAll((Collection<? extends Article>) filterResults.values);
+
             Log.d("ARTICLE PAGE","PaddAll" +articles.size() );
             notifyDataSetChanged();
             Log.d("ARTICLE PAGE","Pnotify" +articles.size() );

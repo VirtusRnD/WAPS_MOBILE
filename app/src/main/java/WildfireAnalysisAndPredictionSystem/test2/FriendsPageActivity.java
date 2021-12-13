@@ -29,6 +29,8 @@ public class FriendsPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(FriendsPageActivity.this, ArticlesPageActivity.class);
                 startActivity(intent);
+                finish();
+
             }
         });
         ImageView search_menu_director = findViewById(R.id.menu_search);
@@ -37,6 +39,8 @@ public class FriendsPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(FriendsPageActivity.this, SearchPageActivity.class);
                 startActivity(intent);
+                finish();
+
             }
         });
         ImageView main_menu_director = findViewById(R.id.menu_main);
@@ -45,6 +49,8 @@ public class FriendsPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(FriendsPageActivity.this, MainMenuActivity.class);
                 startActivity(intent);
+                finish();
+
             }
         });
         ImageView add_wildfire_menu_director = findViewById(R.id.menu_wildfire_adding);
@@ -53,6 +59,8 @@ public class FriendsPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(FriendsPageActivity.this, WildfireAddingPageActivity.class);
                 startActivity(intent);
+                finish();
+
             }
         });
     }
@@ -64,7 +72,7 @@ public class FriendsPageActivity extends AppCompatActivity {
     }
 
     private void viewSettings() {
-        recyclerView = findViewById(R.id.friend_list);
+        recyclerView = findViewById(R.id.county_list);
         friends = new ArrayList<>();
         friendRecyclerViewAdapter = new FriendRecyclerViewAdapter(friends);
         recyclerView.setAdapter(friendRecyclerViewAdapter);

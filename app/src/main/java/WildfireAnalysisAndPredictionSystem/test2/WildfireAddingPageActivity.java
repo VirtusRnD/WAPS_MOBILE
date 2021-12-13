@@ -20,6 +20,8 @@ public class WildfireAddingPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(WildfireAddingPageActivity.this, ArticlesPageActivity.class);
                 startActivity(intent);
+                finish();
+
             }
         });
         ImageView search_menu_director = findViewById(R.id.menu_search);
@@ -28,6 +30,8 @@ public class WildfireAddingPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(WildfireAddingPageActivity.this, SearchPageActivity.class);
                 startActivity(intent);
+                finish();
+
             }
         });
         ImageView friends_menu_director = findViewById(R.id.menu_friends);
@@ -36,6 +40,8 @@ public class WildfireAddingPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(WildfireAddingPageActivity.this, FriendsPageActivity.class);
                 startActivity(intent);
+                finish();
+
             }
         });
         ImageView main_menu_director = findViewById(R.id.menu_main);
@@ -44,6 +50,8 @@ public class WildfireAddingPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(WildfireAddingPageActivity.this, MainMenuActivity.class);
                 startActivity(intent);
+                finish();
+
             }
         });
     }

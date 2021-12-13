@@ -3,10 +3,12 @@ package WildfireAnalysisAndPredictionSystem.test2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class SettingsPageActivity extends AppCompatActivity {
@@ -15,6 +17,7 @@ public class SettingsPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_page);
+
 
         Button log_out_director = findViewById(R.id.button_log_out);
         log_out_director.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +71,23 @@ public class SettingsPageActivity extends AppCompatActivity {
         });
 
 
+        TextView textView = findViewById(R.id.radius);
+        SeekBar radius_bar = findViewById(R.id.radiusBar);
+        radius_bar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                textView.setText(i+"");
+            }
 
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 }
