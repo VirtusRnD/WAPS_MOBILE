@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "966931269020",
+    "project_id": "waps-31ba7",
+    "storage_bucket": "waps-31ba7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966931269020:android:f04a3813e7c50e58ab7459",
+        "android_client_info": {
+          "package_name": "WildfireAnalysisAndPredictionSystem.test2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966931269020-nbrbuge9pvfqq9je2rl8k3imbd62i9ee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxJRkqDAmbCv8imx2sFtNdtWO7RdabvDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966931269020-nbrbuge9pvfqq9je2rl8k3imbd62i9ee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

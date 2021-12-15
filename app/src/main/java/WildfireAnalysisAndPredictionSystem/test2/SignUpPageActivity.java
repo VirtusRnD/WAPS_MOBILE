@@ -1,15 +1,25 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,10 +27,12 @@ public class SignUpPageActivity extends AppCompatActivity {
     String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
     Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
         setContentView(R.layout.activity_sign_up_page);
         EditText userName = findViewById(R.id.input_username);
         EditText e_mail = findViewById(R.id.input_email);
@@ -44,10 +56,7 @@ public class SignUpPageActivity extends AppCompatActivity {
                 CharSequence inputStr = e_mail.getText().toString();
                 Matcher matcher = pattern.matcher(inputStr);
                 //TODO when the button clicked username, mail, password will be writing on firebase.
-                char[] digits = new char[10];
-                for (int i = 0; i < 10; i++) {
-                    digits[i] = (char) i;
-                }
+
                 if(userName.getText().toString().isEmpty()
                         ||e_mail.getText().toString().isEmpty()
                         ||password.getText().toString().isEmpty()
@@ -70,7 +79,28 @@ public class SignUpPageActivity extends AppCompatActivity {
                     else if(!(password.getText().toString().equals(confirm_password.getText().toString()))){
                         Toast.makeText(SignUpPageActivity.this,"Passwords should match",Toast.LENGTH_SHORT).show();
                         return;
-                    }
+                    } // TODO else if (userName.getText().toString() isnot in database check this)
+
+                    User user =new User(userName.getText().toString(),
+                            password.getText().toString(),e_mail.getText().toString(),new ArrayList<>());
+                    Log.d("SignUP","hereeee!!!!1");
+                    db.collection("users").add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            Log.d("SignUP","onsuccess!!!!1");
+
+                            Toast.makeText(SignUpPageActivity.this,"Welcome to the WAPS",Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.d("SignUP","onfailure!!!!1");
+
+                            Toast.makeText(SignUpPageActivity.this,"Please try again",Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
                 }
 
 
