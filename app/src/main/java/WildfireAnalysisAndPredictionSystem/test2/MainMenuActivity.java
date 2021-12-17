@@ -70,7 +70,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                Intent intent = new Intent(MainMenuActivity.this, SettingsPageActivity.class);
+                Intent intent = new Intent(MainMenuActivity.this, NavDrawer.class);
                 startActivity(intent);
 
                 //TODO buraya bir tane fragment ile yandan kayan menu eklenecek.

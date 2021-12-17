@@ -12,12 +12,15 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
 
@@ -47,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 //TODO checking username and password from the firebase.
+
+
+
 
                 if (remember_user_name.isChecked()){
                     SharedPreferences saveNameSharedPreferences = getPreferences(Context.MODE_PRIVATE);
