@@ -5,30 +5,20 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_tree_foreground"
-        android:label="Wildfire System"
+        android:label="Wildfire System Fragment"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Test2">
-
-        <activity android:name=".NavDrawer"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity
+            android:name=".BottomMenuActivity"
+            android:exported="true"
+            android:label="@string/title_activity_bottom_menu" />
+        <activity
+            android:name=".NavDrawer"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".SettingsPageActivity"
-            android:exported="true" />
-        <activity
-            android:name=".WildfireAddingPageActivity"
-            android:exported="true" />
-        <activity
-            android:name=".FriendsPageActivity"
-            android:exported="true" />
-        <activity
-            android:name=".SearchPageActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ArticlesPageActivity"
-            android:exported="true" />
-        <activity
-            android:name=".MainMenuActivity"
+            android:label=""
             android:exported="true" />
         <activity
             android:name=".GuidePageActivity"
@@ -37,7 +27,7 @@
             android:name=".SignUpPageActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SignInPageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

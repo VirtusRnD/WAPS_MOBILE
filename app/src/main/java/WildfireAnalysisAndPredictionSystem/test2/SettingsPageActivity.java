@@ -3,11 +3,9 @@ package WildfireAnalysisAndPredictionSystem.test2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -23,7 +21,7 @@ public class SettingsPageActivity extends AppCompatActivity {
         log_out_director.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SettingsPageActivity.this, MainActivity.class);
+                Intent intent = new Intent(SettingsPageActivity.this, SignInPageActivity.class);
                 startActivity(intent);
             }
         });

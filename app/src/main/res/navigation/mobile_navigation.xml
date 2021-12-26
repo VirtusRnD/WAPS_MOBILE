@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+    <fragment
+        android:id="@+id/navigation_article"
+        android:name="WildfireAnalysisAndPredictionSystem.test2.ui.ArticleFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article" />
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="WildfireAnalysisAndPredictionSystem.test2.ui.FireSearchFragment"
+        android:label="fragment_fire_search"
+        tools:layout="@layout/fragment_fire_search" />
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="WildfireAnalysisAndPredictionSystem.test2.ui.HomeFragment"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" />
+    <fragment
+        android:id="@+id/navigation_friends"
+        android:name="WildfireAnalysisAndPredictionSystem.test2.ui.FriendsFragment"
+        android:label="fragment_friends"
+        tools:layout="@layout/fragment_friends" />
+    <fragment
+        android:id="@+id/navigation_add_fire"
+        android:name="WildfireAnalysisAndPredictionSystem.test2.ui.FireAddFragment"
+        android:label="fragment_fire_add"
+        tools:layout="@layout/fragment_fire_add" />
+</navigation>

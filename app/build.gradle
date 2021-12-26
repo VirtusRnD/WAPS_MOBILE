@@ -9,7 +9,7 @@ android {
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
 
-        applicationId "WildfireAnalysisAndPredictionSystem.test2"
+        applicationId 'WildfireAnalysisAndPredictionSystem.test2'
         minSdk 29
         targetSdk 31
         versionCode 1
@@ -36,9 +36,12 @@ android {
 
 dependencies {
     implementation 'com.google.firebase:firebase-firestore:21.6.0'
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:23.2.0'
+    //noinspection GradleCompatible
     implementation 'com.android.support:design:23.2.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -52,6 +55,5 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-
 
 }

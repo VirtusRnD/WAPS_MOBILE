@@ -14,12 +14,12 @@ import android.widget.TextView;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class MainActivity extends AppCompatActivity {
+public class SignInPageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sign_in_page);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         sign_up_director.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SignUpPageActivity.class);
+                Intent intent = new Intent(SignInPageActivity.this, SignUpPageActivity.class);
                 startActivity(intent);
                 finish();
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString("USERNAME",username.getText().toString());
                     editor.commit();
                 }
-                Intent intent = new Intent(MainActivity.this, MainMenuActivity.class);
+                Intent intent = new Intent(SignInPageActivity.this, BottomMenuActivity.class);
                 startActivity(intent);
                 finish();
 

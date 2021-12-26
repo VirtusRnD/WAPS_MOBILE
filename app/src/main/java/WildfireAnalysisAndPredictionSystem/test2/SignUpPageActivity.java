@@ -17,7 +17,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -108,7 +107,7 @@ public class SignUpPageActivity extends AppCompatActivity {
                                                 public void onSuccess(DocumentReference documentReference) {
                                                     Log.d("SignUP", "onsuccess!!!!1");
                                                     Toast.makeText(SignUpPageActivity.this, "Welcome to the WAPS", Toast.LENGTH_SHORT).show();
-                                                    Intent intent = new Intent(SignUpPageActivity.this, MainActivity.class);
+                                                    Intent intent = new Intent(SignUpPageActivity.this, SignInPageActivity.class);
 
                                                     startActivity(intent);
                                                 }

@@ -1,26 +1,26 @@
-package WildfireAnalysisAndPredictionSystem.test2;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package WildfireAnalysisAndPredictionSystem.test2.ui;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
+import android.view.ViewGroup;
 import android.widget.Toast;
-
-
 
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -29,79 +29,48 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-
 import java.util.ArrayList;
 
-public class ArticlesPageActivity extends AppCompatActivity implements ArticleRecyclerViewAdapter.OnArticleListener {
+import WildfireAnalysisAndPredictionSystem.test2.Article;
+import WildfireAnalysisAndPredictionSystem.test2.ArticleRecyclerViewAdapter;
+import WildfireAnalysisAndPredictionSystem.test2.R;
+
+
+public class ArticleFragment extends Fragment implements ArticleRecyclerViewAdapter.OnArticleListener{
+
 
     private ArrayList<Article> articles = new ArrayList<>();
     private RecyclerView recyclerView;
     private ArticleRecyclerViewAdapter articleRecyclerViewAdapter;
     private FirebaseFirestore db;
+    private View view;
 
     @SuppressLint("NotifyDataSetChanged")
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        view = inflater.inflate(R.layout.fragment_article,container,false);
         db = FirebaseFirestore.getInstance();
-        setContentView(R.layout.activity_articles_page);
         viewSettings();
-        recyclerView = findViewById(R.id.article_list);
+        setHasOptionsMenu(true);
+        recyclerView = view.findViewById(R.id.article_list);
         articleRecyclerViewAdapter.notifyDataSetChanged();
-
-
-        ImageView add_wildfire_menu_director = findViewById(R.id.menu_wildfire_adding);
-        add_wildfire_menu_director.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ArticlesPageActivity.this, WildfireAddingPageActivity.class);
-
-                startActivity(intent);
-                finish();
-            }
-        });
-        ImageView search_menu_director = findViewById(R.id.menu_search);
-        search_menu_director.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ArticlesPageActivity.this, SearchPageActivity.class);
-                startActivity(intent);
-                finish();
-
-            }
-        });
-        ImageView friends_menu_director = findViewById(R.id.menu_friends);
-        friends_menu_director.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ArticlesPageActivity.this, FriendsPageActivity.class);
-                startActivity(intent);
-                finish();
-
-            }
-        });
-        ImageView main_menu_director = findViewById(R.id.menu_main);
-        main_menu_director.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ArticlesPageActivity.this, MainMenuActivity.class);
-                startActivity(intent);
-                finish();
-
-            }
-        });
+        return view;
     }
 
     private void fillTheArray() {
-
-
         db.collection("articles").orderBy("year", Query.Direction.DESCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @SuppressLint("NotifyDataSetChanged")
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                         if (error != null) {
-                            Toast.makeText(ArticlesPageActivity.this, "There is a connection problem", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "There is a connection problem", Toast.LENGTH_SHORT).show();
                         }
                         articles.clear();
                         for (QueryDocumentSnapshot doc : value) {
@@ -110,18 +79,17 @@ public class ArticlesPageActivity extends AppCompatActivity implements ArticleRe
                         }
                     }
                 });
-
     }
 
     private void viewSettings() {
-        recyclerView = findViewById(R.id.article_list);
+        recyclerView = view.findViewById(R.id.article_list);
         fillTheArray();
 
         Log.d("view ",articles.size()+"");
         articleRecyclerViewAdapter = new ArticleRecyclerViewAdapter(articles, this);
 
         recyclerView.setAdapter(articleRecyclerViewAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
     }
 
@@ -131,14 +99,14 @@ public class ArticlesPageActivity extends AppCompatActivity implements ArticleRe
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(this.articles.get(position).getLink().replace(",//","://")));
         startActivity(intent);
-
-
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.search_menu, menu);
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+
+        inflater.inflate(R.menu.search_menu, menu);
         MenuItem searchItem = menu.findItem(R.id.search_action);
         androidx.appcompat.widget.SearchView searchView = (SearchView) searchItem.getActionView();
         //TODO firstly the latest 25 or 50 article shown ins recycler-view searching actually will be done in firebase.
@@ -153,12 +121,11 @@ public class ArticlesPageActivity extends AppCompatActivity implements ArticleRe
                 articleRecyclerViewAdapter.getFilter().filter(newText);
                 Log.d("ARTICLE PAGE", "ONQUERYTEXTCHANGE");
                 if (articles.isEmpty()) {
-                    Toast.makeText(ArticlesPageActivity.this, "We couldn't find any related article", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "We couldn't find any related article", Toast.LENGTH_SHORT).show();
                 }
                 return false;
             }
         });
-        return super.onCreateOptionsMenu(menu);
     }
 
     class LoadingArticles extends AsyncTask<FirebaseFirestore,Integer,ArrayList> {

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_article"
+        android:icon="@drawable/ic_android_article"
+        android:title="Article" />
+    <item
+        android:id="@+id/navigation_search"
+        android:icon="@drawable/ic_android_search"
+        android:title="Search Fire" />
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_android_home_page"
+        android:title="Home" />
+    <item
+        android:id="@+id/navigation_friends"
+        android:icon="@drawable/ic_android_friends"
+        android:title="Friends" />
+    <item
+        android:id="@+id/navigation_add_fire"
+        android:icon="@drawable/ic_android_fire"
+        android:title="Add Fire" />
+</menu>
