@@ -77,7 +77,7 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/county_list"
-                    android:background="@drawable/box_green"
+
 
                     android:layout_width="0dp"
                     android:layout_height="200dp"

@@ -1,9 +1,9 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,6 +11,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -20,10 +21,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.DocumentSnapshot;
+
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -31,11 +29,12 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+
 import java.util.ArrayList;
 
 public class ArticlesPageActivity extends AppCompatActivity implements ArticleRecyclerViewAdapter.OnArticleListener {
 
-    private ArrayList<Article> articles;
+    private ArrayList<Article> articles = new ArrayList<>();
     private RecyclerView recyclerView;
     private ArticleRecyclerViewAdapter articleRecyclerViewAdapter;
     private FirebaseFirestore db;
@@ -98,6 +97,7 @@ public class ArticlesPageActivity extends AppCompatActivity implements ArticleRe
 
         db.collection("articles").orderBy("year", Query.Direction.DESCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @SuppressLint("NotifyDataSetChanged")
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                         if (error != null) {
@@ -111,34 +111,10 @@ public class ArticlesPageActivity extends AppCompatActivity implements ArticleRe
                     }
                 });
 
-
-/*
-        query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                Log.d("Articles", task.isSuccessful() + "");
-                if (task.isSuccessful()) {
-                    for (DocumentSnapshot documentSnapshot : task.getResult()) {
-
-                        Log.d("Articles", documentSnapshot.getString("title"));
-                        Article art = new Article(documentSnapshot.getString("authors"),
-                                documentSnapshot.getString("title"),
-                                documentSnapshot.getString("link"),
-                                documentSnapshot.getString("year"));
-
-                        articles.add(art);
-                        Log.d("Size", articles.size() + "");
-
-                    }
-                }
-            }
-        });*/
-
     }
 
     private void viewSettings() {
         recyclerView = findViewById(R.id.article_list);
-        articles = new ArrayList<>();
         fillTheArray();
 
         Log.d("view ",articles.size()+"");
@@ -153,7 +129,7 @@ public class ArticlesPageActivity extends AppCompatActivity implements ArticleRe
     public void onArticleClick(int position) {
         Log.d("ARTICLE PAGE", "Clicked" + position);
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(this.articles.get(position).getLink()));
+        intent.setData(Uri.parse(this.articles.get(position).getLink().replace(",//","://")));
         startActivity(intent);
 
 
@@ -183,5 +159,13 @@ public class ArticlesPageActivity extends AppCompatActivity implements ArticleRe
             }
         });
         return super.onCreateOptionsMenu(menu);
+    }
+
+    class LoadingArticles extends AsyncTask<FirebaseFirestore,Integer,ArrayList> {
+
+        @Override
+        protected ArrayList doInBackground(FirebaseFirestore... firebaseFirestores) {
+            return null;
+        }
     }
 }
