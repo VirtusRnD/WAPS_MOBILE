@@ -1,13 +1,16 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
 public class Article {
+
     private String authors;
     private String title;
     private String link;
-    private int year;
+    private String year;
 
+    public Article() {
+    }
 
-    public Article(String authors, String title, String link, int year) {
+    public Article(String authors, String title, String link, String year) {
         this.authors = authors;
         this.title = title;
         this.link = link;
@@ -19,7 +22,7 @@ public class Article {
         return this.year + "";
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 

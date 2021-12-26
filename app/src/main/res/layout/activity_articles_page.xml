@@ -23,7 +23,6 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/article_list"
-                android:background="@drawable/box"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"

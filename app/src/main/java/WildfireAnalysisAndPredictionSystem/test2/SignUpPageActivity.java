@@ -25,8 +25,7 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -45,6 +44,7 @@ public class SignUpPageActivity extends AppCompatActivity {
         EditText confirm_password = findViewById(R.id.password_confirm_input);
         db = FirebaseFirestore.getInstance();
         Log.d("Ins", db.toString());
+
 
 
         TextView guide_director = findViewById(R.id.signup_3);
@@ -88,7 +88,7 @@ public class SignUpPageActivity extends AppCompatActivity {
                     } else {
                         User user = new User(userName.getText().toString(),
                                 password.getText().toString(), e_mail.getText().toString(), new ArrayList<>());
-                        Log.d("SignUP", "hereeee!!!!1");
+
                         Log.d("deneme", db.collection("users").document("000000").toString());
 
                         Query query = db.collection("users").whereEqualTo("username", userName.getText().toString());
@@ -100,13 +100,17 @@ public class SignUpPageActivity extends AppCompatActivity {
                                         String user = documentSnapshot.getString("username");
                                         if (user.equals(userName.getText().toString())) {
                                             Toast.makeText(SignUpPageActivity.this, "Username exists please choose another", Toast.LENGTH_SHORT).show();
-                                            return;
+                                            break;
                                         } else {
+                                            Log.d("SignUP", "hereeee!!!!1");
                                             db.collection("users").add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                                 @Override
                                                 public void onSuccess(DocumentReference documentReference) {
                                                     Log.d("SignUP", "onsuccess!!!!1");
                                                     Toast.makeText(SignUpPageActivity.this, "Welcome to the WAPS", Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(SignUpPageActivity.this, MainActivity.class);
+
+                                                    startActivity(intent);
                                                 }
                                             }).addOnFailureListener(new OnFailureListener() {
                                                 @Override
@@ -128,8 +132,7 @@ public class SignUpPageActivity extends AppCompatActivity {
                     }
                 }
 
-                Intent intent = new Intent(SignUpPageActivity.this, MainActivity.class);
-                startActivity(intent);
+
             }
         });
     }

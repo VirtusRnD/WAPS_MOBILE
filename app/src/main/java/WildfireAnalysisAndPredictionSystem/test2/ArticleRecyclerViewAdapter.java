@@ -1,6 +1,7 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
 
+import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,6 +20,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class ArticleRecyclerViewAdapter extends RecyclerView.Adapter<ArticleRecyclerViewAdapter.MyViewHolder> implements Filterable {
+   Context context;
     private List<Article> articles;
     private OnArticleListener onArticleListener;
     private List<Article> allArticle;
@@ -65,7 +66,7 @@ public class ArticleRecyclerViewAdapter extends RecyclerView.Adapter<ArticleRecy
             List<Article> filteredArticle = new ArrayList<>();
             if (charSequence.toString().isEmpty()){
                 filteredArticle.addAll(allArticle);
-                Log.d("ARTICLE PAGE","Freturn" +allArticle );
+                Log.d("SIZE","Freturn" +allArticle.size() );
                 Log.d("ARTICLE PAGE","Fif  " +articles.size()  );
             }else{
                 Log.d("ARTICLE PAGE","Felse" +articles.size() );
@@ -111,6 +112,7 @@ public class ArticleRecyclerViewAdapter extends RecyclerView.Adapter<ArticleRecy
             authors = itemView.findViewById(R.id.txtAuthors);
             title = itemView.findViewById(R.id.txtTitle);
             date = itemView.findViewById(R.id.txtDate);
+
             this.onArticleListener=onArticleListener;
 
             title.setOnClickListener(this);
