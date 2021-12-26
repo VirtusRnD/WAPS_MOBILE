@@ -17,10 +17,10 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
-import java.util.PrimitiveIterator;
 
 public class WildfireAddingPageActivity extends AppCompatActivity {
-private FirebaseFirestore db;
+    private FirebaseFirestore db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +30,7 @@ private FirebaseFirestore db;
         EditText county_input = findViewById(R.id.search_county_input);
         EditText date_input = findViewById(R.id.date_input);
         EditText time_input = findViewById(R.id.time_input);
-        Button  add_button = findViewById(R.id.add_button);
+        Button add_button = findViewById(R.id.add_button);
 
         ImageView article_menu_director = findViewById(R.id.menu_articles);
         article_menu_director.setOnClickListener(new View.OnClickListener() {
@@ -79,19 +79,21 @@ private FirebaseFirestore db;
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(county_input.getText().toString().isEmpty()
-                        ||date_input.getText().toString().isEmpty()
-                        ||time_input.getText().toString().isEmpty()){
-                    Toast.makeText(WildfireAddingPageActivity.this,"Please fill all places",Toast.LENGTH_SHORT).show();
-                }else{
-                    HashMap<String,String> fire = new HashMap<>();
-                    fire.put("county",county_input.getText().toString());
-                    fire.put("date",date_input.getText().toString());
-                    fire.put("time",time_input.getText().toString());
+                String message = "";
+                if (county_input.getText().toString().isEmpty()
+                        || date_input.getText().toString().isEmpty()
+                        || time_input.getText().toString().isEmpty()) {
+                    Toast.makeText(WildfireAddingPageActivity.this, "Please fill all places", Toast.LENGTH_SHORT).show();
+                } else {
+                    HashMap<String, String> fire = new HashMap<>();
+                    fire.put("county", county_input.getText().toString());
+                    fire.put("date", date_input.getText().toString());
+                    fire.put("time", time_input.getText().toString());
                     db.collection("fires").add(fire).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
                             Toast.makeText(WildfireAddingPageActivity.this,"Thank you for your contributions",Toast.LENGTH_SHORT).show();
+
                             county_input.setText("");
                             date_input.setText("");
                             time_input.setText("");
@@ -103,6 +105,8 @@ private FirebaseFirestore db;
 
                         }
                     });
+
+
                 }
             }
         });
