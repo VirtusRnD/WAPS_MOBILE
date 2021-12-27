@@ -2,28 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="215dp"
-    android:background="#20B5C8"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorPrimary"
     android:gravity="bottom">
-
-    <TextView
-        android:id="@+id/username_nav_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Username"
-        android:textSize="34sp"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-
-        />
-
-    <TextView
-        android:id="@+id/email_nav_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="E-mail"
-        android:textSize="24sp"
-        android:textColor="#ffffff"
-        android:textStyle="italic"
-        />
 </LinearLayout>

@@ -64,12 +64,12 @@ public class NavDrawer extends AppCompatActivity {
                         return  true;
 
                     case R.id.rate_us:
-                        Toast.makeText(getApplicationContext(),"f3",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"f4",Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         return  true;
 
                     case R.id.share:
-                        Toast.makeText(getApplicationContext(),"f3",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"f5",Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         return  true;
 
