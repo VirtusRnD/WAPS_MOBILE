@@ -1,5 +1,9 @@
 package WildfireAnalysisAndPredictionSystem.test2.ui;
 
+import WildfireAnalysisAndPredictionSystem.test2.County;
+import WildfireAnalysisAndPredictionSystem.test2.CountyRecyclerViewAdapter;
+import WildfireAnalysisAndPredictionSystem.test2.R;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,9 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
-import WildfireAnalysisAndPredictionSystem.test2.County;
-import WildfireAnalysisAndPredictionSystem.test2.CountyRecyclerViewAdapter;
-import WildfireAnalysisAndPredictionSystem.test2.R;
+
 
 public class FireSearchFragment extends Fragment implements CountyRecyclerViewAdapter.OnCountyListener {
 
@@ -40,7 +42,10 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
         viewSettings();
         countyRecyclerViewAdapter.notifyDataSetChanged();
 
-        RecyclerView recyclerView = view.findViewById(R.id.county_list);
+       recyclerView = view.findViewById(R.id.county_list);
+
+       firebaseFirestore = FirebaseFirestore.getInstance();
+
         return view;
     }
 

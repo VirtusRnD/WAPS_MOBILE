@@ -25,6 +25,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -90,17 +91,21 @@ public class SignUpPageActivity extends AppCompatActivity {
 
                         Log.d("deneme", db.collection("users").document("000000").toString());
 
-                        Query query = db.collection("users").whereEqualTo("username", userName.getText().toString());
+                        ArrayList<String> username_array = new ArrayList<>();
+                        Query query = db.collection("users");
                         query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                 if (task.isSuccessful()) {
                                     for (DocumentSnapshot documentSnapshot : task.getResult()) {
-                                        String user = documentSnapshot.getString("username");
-                                        if (user.equals(userName.getText().toString())) {
+                                        String user_name = documentSnapshot.getString("username");
+                                        Log.d("user_name",documentSnapshot.getString("username"));
+                                        username_array.add(user_name);
+                                    }
+                                    if (username_array.contains(userName.getText().toString())) {
                                             Toast.makeText(SignUpPageActivity.this, "Username exists please choose another", Toast.LENGTH_SHORT).show();
-                                            break;
-                                        } else {
+                                            return;
+                                    }else {
                                             Log.d("SignUP", "hereeee!!!!1");
                                             db.collection("users").add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                                 @Override
@@ -124,7 +129,7 @@ public class SignUpPageActivity extends AppCompatActivity {
                                         }
                                     }
                                 }
-                            }
+
                         });
 
 

@@ -12,15 +12,12 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.firebase.firestore.FirebaseFirestore;
-
 public class SignInPageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in_page);
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
 
@@ -49,9 +46,6 @@ public class SignInPageActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 //TODO checking username and password from the firebase.
-
-
-
 
                 if (remember_user_name.isChecked()){
                     SharedPreferences saveNameSharedPreferences = getPreferences(Context.MODE_PRIVATE);
