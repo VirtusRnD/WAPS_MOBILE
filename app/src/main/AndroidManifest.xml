@@ -35,6 +35,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Pop"
+            android:theme="@style/Theme.Test2.CustomTheme">
+        </activity>
     </application>
 
 </manifest>

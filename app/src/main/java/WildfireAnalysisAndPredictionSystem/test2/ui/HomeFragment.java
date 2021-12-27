@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import WildfireAnalysisAndPredictionSystem.test2.NavDrawer;
 import WildfireAnalysisAndPredictionSystem.test2.R;
+import WildfireAnalysisAndPredictionSystem.test2.SettingsPageActivity;
 
 
 public class HomeFragment extends Fragment {
@@ -40,7 +41,7 @@ public class HomeFragment extends Fragment {
         goto_settings.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                Intent intent = new Intent(getContext(), NavDrawer.class);
+                Intent intent = new Intent(getContext(), SettingsPageActivity.class);
                 startActivity(intent);
 
                 //TODO buraya bir tane fragment ile yandan kayan menu eklenecek.

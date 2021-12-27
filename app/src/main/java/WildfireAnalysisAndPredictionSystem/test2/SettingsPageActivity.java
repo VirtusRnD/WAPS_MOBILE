@@ -16,7 +16,6 @@ public class SettingsPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_page);
 
-
         Button log_out_director = findViewById(R.id.button_log_out);
         log_out_director.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,8 +46,7 @@ public class SettingsPageActivity extends AppCompatActivity {
         change_username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO use pop-up, change username from database
-                //TODO users are added as friends by their id's, not their usernames in the database. Therefore when a user changes their username, friendship is not affected.
+                startActivity(new Intent(SettingsPageActivity.this, Pop.class));
             }
         });
 
