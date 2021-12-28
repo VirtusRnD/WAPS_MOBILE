@@ -12,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import WildfireAnalysisAndPredictionSystem.test2.NavDrawer;
 import WildfireAnalysisAndPredictionSystem.test2.R;
 import WildfireAnalysisAndPredictionSystem.test2.SettingsPageActivity;
 

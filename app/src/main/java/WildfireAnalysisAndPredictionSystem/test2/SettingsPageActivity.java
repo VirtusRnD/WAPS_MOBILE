@@ -87,6 +87,7 @@ public class SettingsPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SettingsPageActivity.this, SignInPageActivity.class);
                 startActivity(intent);
+                //TODO should check for the user not being able to sign in by back button
             }
         });
 
@@ -99,7 +100,6 @@ public class SettingsPageActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(SettingsPageActivity.this, PopDeleteAccount.class);
                 startActivity(intent);
-
             }
         });
     }

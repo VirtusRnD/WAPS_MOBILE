@@ -19,9 +19,6 @@
             android:exported="true"
             android:label="@string/title_activity_bottom_menu" />
         <activity
-            android:name=".NavDrawer"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity
             android:name=".SettingsPageActivity"
             android:exported="true"
             android:label="" />
