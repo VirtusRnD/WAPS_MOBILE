@@ -33,6 +33,7 @@ import java.util.ArrayList;
 
 import WildfireAnalysisAndPredictionSystem.test2.Article;
 import WildfireAnalysisAndPredictionSystem.test2.ArticleRecyclerViewAdapter;
+import WildfireAnalysisAndPredictionSystem.test2.BottomMenuActivity;
 import WildfireAnalysisAndPredictionSystem.test2.R;
 
 
@@ -49,7 +50,6 @@ public class ArticleFragment extends Fragment implements ArticleRecyclerViewAdap
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
