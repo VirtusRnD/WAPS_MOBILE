@@ -125,7 +125,9 @@ public class SettingsPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SettingsPageActivity.this, SignInPageActivity.class);
                 startActivity(intent);
+                SaveSharedPreference.clearUserName(SettingsPageActivity.this);
                 //TODO should check for the user not being able to sign in by back button
+
             }
         });
 

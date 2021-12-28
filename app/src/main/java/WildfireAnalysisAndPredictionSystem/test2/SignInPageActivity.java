@@ -20,46 +20,53 @@ public class SignInPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in_page);
 
 
+        if(SaveSharedPreference.getUserName(SignInPageActivity.this).length() == 0)
+        {
+            EditText username = findViewById(R.id.input_username_sing_in);
+            EditText password = findViewById(R.id.password_input_sign_in);
+            CheckBox remember_user_name = findViewById(R.id.remember_user_name);
 
-        EditText username = findViewById(R.id.input_username_sing_in);
-        EditText password = findViewById(R.id.password_input_sign_in);
-        CheckBox remember_user_name = findViewById(R.id.remember_user_name);
+            TextView sign_up_director = findViewById(R.id.signup_3);
 
-        TextView sign_up_director = findViewById(R.id.signup_3);
+            SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
+            String name = sharedPreferences.getString("USERNAME","");
+            username.setText(name);
 
-        SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
-        String name = sharedPreferences.getString("USERNAME","");
-        username.setText(name);
+            sign_up_director.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(SignInPageActivity.this, SignUpPageActivity.class);
+                    startActivity(intent);
 
-        sign_up_director.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SignInPageActivity.this, SignUpPageActivity.class);
-                startActivity(intent);
-
-            }
-        });
-
-        Button main_menu_director = findViewById(R.id.button_sign_in);
-        main_menu_director.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                //TODO checking username and password from the firebase.
-
-                if (remember_user_name.isChecked()){
-                    SharedPreferences saveNameSharedPreferences = getPreferences(Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = saveNameSharedPreferences.edit();
-                    editor.putString("USERNAME",username.getText().toString());
-                    editor.commit();
                 }
-                Intent intent = new Intent(SignInPageActivity.this, BottomMenuActivity.class);
-                startActivity(intent);
-                finish();
+            });
+
+            Button main_menu_director = findViewById(R.id.button_sign_in);
+            main_menu_director.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    //TODO checking username and password from the firebase.
+
+                    if (true) {
+                        if (remember_user_name.isChecked()) {
+                            SaveSharedPreference.setUserName(SignInPageActivity.this, name);
+                        }
+                        Intent intent = new Intent(SignInPageActivity.this, BottomMenuActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+            });
+        }
+        else
+        {
+            Intent intent = new Intent(SignInPageActivity.this, BottomMenuActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
 
 
-            }
-        });
     }
 }
