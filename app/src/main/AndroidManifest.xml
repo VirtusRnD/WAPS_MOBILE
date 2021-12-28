@@ -10,6 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Test2">
+
+        <activity
+            android:name=".AboutUsActivity"
+            android:exported="true" />
         <activity
             android:name=".BottomMenuActivity"
             android:exported="true"
@@ -45,6 +49,10 @@
         <activity
             android:name=".PopEmail"
             android:theme="@style/Theme.Test2.CustomTheme" />
+        <activity
+            android:name=".PopDeleteAccount"
+            android:theme="@style/Theme.Test2.CustomTheme" />
+
     </application>
 
 </manifest>
