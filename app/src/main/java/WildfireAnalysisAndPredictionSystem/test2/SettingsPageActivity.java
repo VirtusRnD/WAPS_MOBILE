@@ -46,7 +46,7 @@ public class SettingsPageActivity extends AppCompatActivity {
         change_username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SettingsPageActivity.this, Pop.class));
+                startActivity(new Intent(SettingsPageActivity.this, PopUsername.class));
             }
         });
 
