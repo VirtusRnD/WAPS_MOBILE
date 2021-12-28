@@ -1,20 +1,28 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class SendEmailActivity extends Activity {
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class SendEmailActivity extends AppCompatActivity {
     EditText editTextSubject,editTextMessage;
     Button send;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_email);
+
+        ActionBar actionBar = getSupportActionBar();
+        setTitle("Send us an e-mail");
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         editTextSubject=(EditText)findViewById(R.id.editText2);
         editTextMessage=(EditText)findViewById(R.id.editText3);
@@ -41,6 +49,15 @@ public class SendEmailActivity extends Activity {
 
             }
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 
