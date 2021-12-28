@@ -3,6 +3,7 @@ package WildfireAnalysisAndPredictionSystem.test2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,12 +45,12 @@ public class SettingsPageActivity extends AppCompatActivity {
         });
 
 
-        TextView textView = findViewById(R.id.radius);
+        TextView radius = findViewById(R.id.radius);
         SeekBar radius_bar = findViewById(R.id.radiusBar);
         radius_bar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                textView.setText(i+"");
+                radius.setText(i+"");
             }
 
             @Override
@@ -67,6 +68,43 @@ public class SettingsPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SettingsPageActivity.this, AboutUsActivity.class);
                 startActivity(intent);
+            }
+        });
+
+
+        TextView help_and_support = findViewById(R.id.settings_help);
+        help_and_support.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SettingsPageActivity.this, SendEmailActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        TextView rate = findViewById(R.id.settings_rate);
+        rate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                String link = "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID;
+                intent.setData(Uri.parse(link));
+                startActivity(intent);
+            }
+        });
+
+
+        TextView share = findViewById(R.id.settings_share);
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name");
+                String shareMessage= "\nLet me recommend you this application\n\n";
+                shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+                startActivity(Intent.createChooser(shareIntent, "choose one"));
             }
         });
 
