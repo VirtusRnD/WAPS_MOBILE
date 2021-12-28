@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#00555555">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@drawable/oval"
+        tools:ignore="MissingConstraints">
+        <TextView
+                android:id="@+id/newUserName"
+                android:text="New Username:"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/newUserNameInput"
+                android:ems="10"
+                android:inputType="textPersonName"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintStart_toStartOf="@+id/newUserName"
+                app:layout_constraintTop_toBottomOf="@+id/newUserName"
+
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/confirmPassword"
+                android:text="Enter Your Password to Confirm:"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintStart_toStartOf="@+id/newUserNameInput"
+                app:layout_constraintTop_toBottomOf="@+id/newUserNameInput"
+
+                android:layout_marginTop="5dp"/>
+
+            <EditText
+                android:id="@+id/confirmPasswordInput"
+                android:ems="10"
+                android:inputType="textPassword"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintStart_toStartOf="@+id/confirmPassword"
+                app:layout_constraintTop_toBottomOf="@+id/confirmPassword"
+
+                android:layout_marginTop="5dp" />
+
+            <Button
+                android:id="@+id/changeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="5dp"
+                android:text="Change"
+                app:layout_constraintTop_toBottomOf="@+id/confirmPasswordInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

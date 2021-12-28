@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/account_settings"
+            android:title="Account Settings" />
+        <item
+            android:id="@+id/about_us"
+            android:title="About Us">
+            <menu>
+                <item
+                    android:id="@+id/info"
+                    android:icon="@drawable/ic_baseline_info_24"
+                    android:title="Information" />
+                <item
+                    android:id="@+id/help_support"
+                    android:icon="@drawable/ic_baseline_help_24"
+                    android:title="Help&amp;Support" />
+                <item
+                    android:id="@+id/rate_us"
+                    android:icon="@drawable/ic_baseline_stars_24"
+                    android:title="Rate Us" />
+                <item
+                    android:id="@+id/share"
+                    android:icon="@drawable/ic_baseline_share_24"
+                    android:title="Share" />
+
+
+            </menu>
+        </item>
+
+    </group>
+</menu>
