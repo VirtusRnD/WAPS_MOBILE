@@ -54,7 +54,7 @@ public class SettingsPageActivity extends AppCompatActivity {
         change_email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO use pop-up, change email from database
+                startActivity(new Intent(SettingsPageActivity.this, PopEmail.class));
             }
         });
 
@@ -62,7 +62,7 @@ public class SettingsPageActivity extends AppCompatActivity {
         change_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO use pop-up, change password from database
+                startActivity(new Intent(SettingsPageActivity.this, PopPassword.class));
             }
         });
 

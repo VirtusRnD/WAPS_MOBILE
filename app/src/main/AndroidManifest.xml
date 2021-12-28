@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="WildfireAnalysisAndPredictionSystem.test2">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_tree_foreground"
-        android:label="Wildfire System Fragment"
+        android:label="Wildfire System"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Test2">
@@ -18,8 +19,8 @@
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".SettingsPageActivity"
-            android:label=""
-            android:exported="true" />
+            android:exported="true"
+            android:label="" />
         <activity
             android:name=".GuidePageActivity"
             android:exported="true" />
@@ -35,9 +36,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Pop"
-            android:theme="@style/Theme.Test2.CustomTheme">
-        </activity>
+        <activity
+            android:name=".PopUsername"
+            android:theme="@style/Theme.Test2.CustomTheme" />
+        <activity
+            android:name=".PopPassword"
+            android:theme="@style/Theme.Test2.CustomTheme" />
+        <activity
+            android:name=".PopEmail"
+            android:theme="@style/Theme.Test2.CustomTheme" />
     </application>
 
 </manifest>

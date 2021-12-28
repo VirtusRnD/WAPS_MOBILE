@@ -6,7 +6,7 @@ import android.util.DisplayMetrics;
 
 public class PopUsername extends Activity {
     @Override
-    protected void onCreate (Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.username);
@@ -18,6 +18,5 @@ public class PopUsername extends Activity {
         int height = dm.heightPixels;
 
         getWindow().setLayout((int)(width*.8),(int)(height*.3));
-
     }
 }
