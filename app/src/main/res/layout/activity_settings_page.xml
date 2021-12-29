@@ -31,8 +31,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/settings_about_us"
 
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="15dp"/>
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="15dp" />
 
             <TextView
                 android:id="@+id/settings_share"
@@ -44,7 +44,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/settings_rate"
 
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="15dp" />
 
             <TextView
@@ -57,7 +57,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/settings_email"
 
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="15dp" />
 
             <TextView
@@ -82,7 +82,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/settings_help"
 
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="15dp" />
 
             <TextView
@@ -95,7 +95,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/settings_info"
 
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="15dp" />
 
             <SeekBar
@@ -104,7 +104,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="@id/settings_notification_radius"
 
@@ -141,6 +141,7 @@
             <TextView
                 android:id="@+id/title_account_settings"
                 android:text="Account Settings"
+                android:textSize="15dp"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -148,21 +149,20 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
 
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp" />
 
             <TextView
                 android:id="@+id/guide_director"
-                android:text="How to Use"
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="How to Use"
+
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
 
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/settings_share"
-
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="30dp" />
+                app:layout_constraintTop_toBottomOf="@id/settings_share" />
 
             <TextView
                 android:id="@+id/settings_username"
@@ -174,12 +174,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/title_account_settings"
 
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="15dp" />
 
             <TextView
                 android:id="@+id/settings_about_us"
                 android:text="About Us"
+                android:textSize="15dp"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -187,7 +188,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/radiusBar"
 
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp" />
 
             <TextView
@@ -200,7 +201,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/settings_username"
 
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="15dp" />
 
             <TextView
@@ -225,8 +226,117 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/settings_password"
 
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="15dp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                app:srcCompat="@drawable/ic_baseline_help_24"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintEnd_toStartOf="@+id/guide_director"
+                app:layout_constraintTop_toTopOf="@+id/guide_director"
+                app:layout_constraintBottom_toBottomOf="@id/guide_director"
+
+                android:layout_marginEnd="5dp"/>
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_baseline_stars_24"
+
+                app:layout_constraintEnd_toStartOf="@+id/settings_rate"
+                app:layout_constraintTop_toTopOf="@+id/settings_rate"
+                app:layout_constraintBottom_toBottomOf="@id/settings_rate"
+
+                android:layout_marginEnd="5dp"/>
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_notifications_black_24dp"
+
+                app:layout_constraintEnd_toStartOf="@+id/settings_notification_radius"
+                app:layout_constraintTop_toTopOf="@+id/settings_notification_radius"
+                app:layout_constraintBottom_toBottomOf="@id/settings_notification_radius"
+
+                android:layout_marginEnd="5dp"/>
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_android_share"
+
+                app:layout_constraintEnd_toStartOf="@+id/settings_share"
+                app:layout_constraintTop_toTopOf="@+id/settings_share"
+                app:layout_constraintBottom_toBottomOf="@id/settings_share"
+
+                android:layout_marginEnd="5dp"/>
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_android_email"
+
+                app:layout_constraintEnd_toStartOf="@+id/settings_email"
+                app:layout_constraintTop_toTopOf="@+id/settings_email"
+                app:layout_constraintBottom_toBottomOf="@id/settings_email"
+
+                android:layout_marginEnd="5dp"/>
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_android_username"
+
+                app:layout_constraintEnd_toStartOf="@+id/settings_username"
+                app:layout_constraintTop_toTopOf="@+id/settings_username"
+                app:layout_constraintBottom_toBottomOf="@id/settings_username"
+
+                android:layout_marginEnd="5dp"/>
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_android_settings_info"
+
+                app:layout_constraintEnd_toStartOf="@+id/settings_info"
+                app:layout_constraintTop_toTopOf="@+id/settings_info"
+                app:layout_constraintBottom_toBottomOf="@id/settings_info"
+
+                android:layout_marginEnd="5dp"/>
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_android_password"
+
+                app:layout_constraintEnd_toStartOf="@+id/settings_password"
+                app:layout_constraintTop_toTopOf="@+id/settings_password"
+                app:layout_constraintBottom_toBottomOf="@id/settings_password"
+
+                android:layout_marginEnd="5dp"/>
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_android_support"
+
+                app:layout_constraintEnd_toStartOf="@+id/settings_help"
+                app:layout_constraintTop_toTopOf="@+id/settings_help"
+                app:layout_constraintBottom_toBottomOf="@id/settings_help"
+
+                android:layout_marginEnd="5dp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,7 +32,6 @@ public class SignInPageActivity extends AppCompatActivity {
 
             SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
             String name = sharedPreferences.getString("USERNAME","");
-            username.setText(name);
 
             sign_up_director.setOnClickListener(new View.OnClickListener() {
                 @Override
