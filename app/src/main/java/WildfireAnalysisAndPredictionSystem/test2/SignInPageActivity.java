@@ -64,7 +64,7 @@ public class SignInPageActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                 String str_username = username.getText().toString();
-                String str_password = username.getText().toString();
+                String str_password = password.getText().toString();
                 if (TextUtils.isEmpty(str_username)||TextUtils.isEmpty(str_password)){
                     Toast.makeText(SignInPageActivity.this,"Please fill all places",Toast.LENGTH_SHORT).show();
                 }else{
@@ -72,21 +72,15 @@ public class SignInPageActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                Intent intent = new Intent(SignInPageActivity.this, HomeFragment.class);
+                                Intent intent = new Intent(SignInPageActivity.this, BottomMenuActivity.class);
+                                startActivity(intent);
                             }else{
                                 Toast.makeText(SignInPageActivity.this,"Please try again",Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
                 }
-                    if (true) {
-                        if (remember_user_name.isChecked()) {
-                            SaveSharedPreference.setUserName(SignInPageActivity.this, name);
-                        }
-                        Intent intent = new Intent(SignInPageActivity.this, BottomMenuActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
+
                 }
             });
         }

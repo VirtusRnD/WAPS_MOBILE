@@ -27,6 +27,8 @@ import android.widget.ImageButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -50,7 +52,7 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
     private View view;
     private EditText county_name;
     private EditText date;
-
+    private FirebaseAuth auth;
     private FirebaseFirestore db;
 
     @Override
@@ -67,7 +69,7 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_fire_search, container, false);
         db= FirebaseFirestore.getInstance();
-
+        auth = FirebaseAuth.getInstance();
         county_name = view.findViewById(R.id.search_county_input);
         date = view.findViewById(R.id.date_input);
         viewSettingsFav();
@@ -143,9 +145,8 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
     }
 
     private void fillTheArrayFav() {
-        Query query = db.collection("users");
-        ArrayList<County> countyArrayList = new ArrayList<>();
-
+        FirebaseUser user = auth.getCurrentUser();
+        Log.d(TAG,user.getEmail().toString());
 
         counties.add(new County("Ula",true));
         counties.add(new County("Menteşe",true));
