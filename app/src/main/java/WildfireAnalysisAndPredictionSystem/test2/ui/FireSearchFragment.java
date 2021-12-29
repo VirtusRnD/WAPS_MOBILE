@@ -148,6 +148,7 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
         FirebaseUser user = auth.getCurrentUser();
         Log.d(TAG,user.getEmail().toString());
 
+
         counties.add(new County("Ula",true));
         counties.add(new County("Menteşe",true));
         counties.add(new County("Köyceğiz",true));
