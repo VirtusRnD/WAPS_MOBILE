@@ -73,7 +73,7 @@ public class SignInPageActivity extends AppCompatActivity {
                                     }
                                     Intent intent = new Intent(SignInPageActivity.this, BottomMenuActivity.class);
                                     startActivity(intent);
-                                    finish();
+                                    finishAffinity();
                                 }else{
                                     Toast.makeText(SignInPageActivity.this,"Please try again",Toast.LENGTH_SHORT).show();
                                 }
@@ -87,7 +87,7 @@ public class SignInPageActivity extends AppCompatActivity {
         {
             Intent intent = new Intent(SignInPageActivity.this, BottomMenuActivity.class);
             startActivity(intent);
-            finish();
+            finishAffinity();
         }
 
 
