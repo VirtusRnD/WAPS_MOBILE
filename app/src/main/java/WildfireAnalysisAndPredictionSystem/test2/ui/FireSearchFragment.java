@@ -50,8 +50,7 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
     private View view;
     private EditText county_name;
     private EditText date;
-    SignInPageActivity signInPageActivity;
-    String currentUser;
+
     private FirebaseFirestore db;
 
     @Override
@@ -73,8 +72,8 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
         date = view.findViewById(R.id.date_input);
         viewSettingsFav();
         countyRecyclerViewAdapter.notifyDataSetChanged();
-        signInPageActivity = new SignInPageActivity();
-        currentUser= signInPageActivity.user_name;
+
+
         recyclerView = view.findViewById(R.id.county_list);
 
 

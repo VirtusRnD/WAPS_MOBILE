@@ -30,7 +30,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="80dp"
 
-                android:text="Username"
+                android:text="E-mail"
                 android:textSize="20sp"
 
 
