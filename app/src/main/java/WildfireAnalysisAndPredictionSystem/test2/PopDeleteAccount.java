@@ -28,6 +28,7 @@ public class PopDeleteAccount extends Activity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SaveSharedPreference.clearUserName(PopDeleteAccount.this);
                 Intent intent = new Intent(PopDeleteAccount.this, SignInPageActivity.class);
                 startActivity(intent);
                 //TODO somehow kill settingsPage for the user not being able to sign in by back button

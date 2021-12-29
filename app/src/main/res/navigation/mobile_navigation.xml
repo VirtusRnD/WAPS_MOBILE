@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="WildfireAnalysisAndPredictionSystem.test2.ui.HomeFragment"
-        android:label="Home"
+        android:label="Wildfire System"
         tools:layout="@layout/fragment_main_menu" />
     <fragment
         android:id="@+id/navigation_friends"

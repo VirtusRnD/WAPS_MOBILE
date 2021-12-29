@@ -1,5 +1,6 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -19,6 +20,7 @@ public class SignInPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in_page);
 
+        setTitle("Sign In");
 
         if(SaveSharedPreference.getUserName(SignInPageActivity.this).length() == 0)
         {

@@ -1,11 +1,13 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,6 +40,11 @@ public class SignUpPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_page);
+
+        ActionBar actionBar = getSupportActionBar();
+        setTitle("Sign Up");
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         EditText userName = findViewById(R.id.input_username);
         EditText e_mail = findViewById(R.id.input_email);
         EditText password = findViewById(R.id.password_input);
@@ -139,6 +146,15 @@ public class SignUpPageActivity extends AppCompatActivity {
 
             }
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

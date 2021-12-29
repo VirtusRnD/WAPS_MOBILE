@@ -130,9 +130,9 @@ public class SettingsPageActivity extends AppCompatActivity {
         log_out_director.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SaveSharedPreference.clearUserName(SettingsPageActivity.this);
                 Intent intent = new Intent(SettingsPageActivity.this, SignInPageActivity.class);
                 startActivity(intent);
-                SaveSharedPreference.clearUserName(SettingsPageActivity.this);
                 //TODO should check for the user not being able to sign in by back button
 
             }
