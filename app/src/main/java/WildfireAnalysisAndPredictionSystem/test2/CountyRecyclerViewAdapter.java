@@ -63,7 +63,6 @@ public class CountyRecyclerViewAdapter extends RecyclerView.Adapter<CountyRecycl
         @Override
         public void onClick(View view) {
 
-
             onCountyListener.onCountyClick(getAdapterPosition());
             Log.d("Adapter","Clicked" +getAdapterPosition());
         }

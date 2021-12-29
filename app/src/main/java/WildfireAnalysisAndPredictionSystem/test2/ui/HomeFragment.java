@@ -43,8 +43,6 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getContext(), SettingsPageActivity.class);
                 startActivity(intent);
 
-                //TODO buraya bir tane fragment ile yandan kayan menu eklenecek.
-                //TODO buradaki diğer settings buttonu değişecek.
                 return false;
             }
         });

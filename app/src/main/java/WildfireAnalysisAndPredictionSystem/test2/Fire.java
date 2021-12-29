@@ -2,6 +2,7 @@ package WildfireAnalysisAndPredictionSystem.test2;
 
 import com.google.firebase.Timestamp;
 
+import java.sql.Time;
 import java.util.Date;
 
 public class Fire {
@@ -31,4 +32,6 @@ private Date date;
     public void setDate(Date date) {
         this.date = date;
     }
+
+
 }

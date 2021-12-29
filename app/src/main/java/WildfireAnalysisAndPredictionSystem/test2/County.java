@@ -3,6 +3,7 @@ package WildfireAnalysisAndPredictionSystem.test2;
 public class County {
     private String countyName;
     private Boolean isFav;
+
     public County(String countyName, Boolean isFav) {
         this.countyName = countyName;
         this.isFav = isFav;

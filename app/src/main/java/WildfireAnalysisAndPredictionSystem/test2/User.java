@@ -7,15 +7,25 @@ public class User {
     private String password;
     private String email;
     private List<User> friends;
+    private List<County> counties;
 
     public User() {
     }
 
-    public User(String username, String password, String email, List<User> friends) {
+    public User(String username, String password, String email, List<User> friends, List<County> counties) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.friends = friends;
+        this.counties = counties;
+    }
+
+    public List<County> getCounties() {
+        return counties;
+    }
+
+    public void setCounties(List<County> counties) {
+        this.counties = counties;
     }
 
     public String getUsername() {

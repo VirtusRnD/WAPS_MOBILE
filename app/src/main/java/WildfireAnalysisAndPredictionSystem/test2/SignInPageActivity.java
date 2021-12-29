@@ -1,5 +1,6 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,13 +13,23 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class SignInPageActivity extends AppCompatActivity {
-
+    public String user_name;
+    private FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in_page);
+        db = FirebaseFirestore.getInstance();
 
         setTitle("Sign In");
 
@@ -32,7 +43,7 @@ public class SignInPageActivity extends AppCompatActivity {
 
             SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
             String name = sharedPreferences.getString("USERNAME","");
-
+            user_name = username.getText().toString();
             sign_up_director.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -46,8 +57,26 @@ public class SignInPageActivity extends AppCompatActivity {
             main_menu_director.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    final boolean[] exists = new boolean[1];
+                    Query query = db.collection("users");
+                    query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if(task.isSuccessful()){
+                                for (DocumentSnapshot documentSnapshot: task.getResult()){
+                                    if (documentSnapshot.getString("username").equals(username.getText().toString())
+                                            && documentSnapshot.getString("password").equals(password.getText().toString())){
+                                        exists[0] = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    });
 
-                    //TODO checking username and password from the firebase.
+                    if (!exists[0]){
+                        Toast.makeText(SignInPageActivity.this,"Please enter valid username and password",Toast.LENGTH_SHORT).show();
+                    }
 
                     if (true) {
                         if (remember_user_name.isChecked()) {
