@@ -55,16 +55,10 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
     private EditText date;
     private FirebaseAuth auth;
     private FirebaseFirestore db;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
     }
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -75,11 +69,7 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
         date = view.findViewById(R.id.date_input);
         viewSettingsFav();
         countyRecyclerViewAdapter.notifyDataSetChanged();
-
-
         recyclerView = view.findViewById(R.id.county_list);
-
-
         Button search = view.findViewById(R.id.add_button);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,17 +77,13 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
                 viewSettingsSearch();
             }
         });
-
-
         return view;
     }
     @Override
     public void onCountyClick(int position) {
         //TODO When the button clicked the star will be changed with an inverse one.
         Log.d("SEARCH PAGE","Clicked" + position);
-
     }
-
     private void fillTheArraySearch() {
         firebaseFirestore = FirebaseFirestore.getInstance();
         Query query =firebaseFirestore.collection("fires");
@@ -119,23 +105,16 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
                 }
             }
         });
-
     }
-
     private void viewSettingsSearch() {
         Log.d(TAG,"viewSeattingsSearch");
         result = view.findViewById(R.id.result_list);
         fires = new ArrayList<>();
         fillTheArraySearch();
-
         fireRecyclerViewAdapter = new FireRecyclerViewAdapter(fires);
         result.setAdapter(fireRecyclerViewAdapter);
         result.setLayoutManager(new LinearLayoutManager(getContext()));
-
-
-
     }
-
     private void viewSettingsFav() {
         recyclerView = view.findViewById(R.id.county_list);
         counties = new ArrayList<>();
@@ -147,6 +126,21 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
     }
 
     private void fillTheArrayFav() {
+        FirebaseUser user = auth.getCurrentUser();
+        Log.d(TAG,user.getEmail().toString());
+
+
+        counties.add(new County("Ula",true));
+        counties.add(new County("Menteşe",true));
+        counties.add(new County("Köyceğiz",true));
+        counties.add(new County("Marmaris",true));
+        counties.add(new County("Bodrum",true));
+        counties.add(new County("Dalaman",true));
+        counties.add(new County("Datça",true));
+        counties.add(new County("Milas",true));
+        counties.add(new County("Fethiye",true));
+        counties.add(new County("Kavaklıdere",true));
+        counties.add(new County("Yatağan",true));
         searchForUser();
         for (String county_name:countieArrayList) {
             Log.d(TAG,county_name);

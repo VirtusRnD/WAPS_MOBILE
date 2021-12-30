@@ -52,21 +52,14 @@ public class SettingsPageActivity extends AppCompatActivity {
         });
 
 
-        TextView radius = findViewById(R.id.radius);
-        SeekBar radius_bar = findViewById(R.id.radiusBar);
-        radius_bar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        TextView fav_counties = findViewById(R.id.settings_fav_counties);
+        fav_counties.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                radius.setText(i+"");
+            public void onClick(View view) {
+                Intent intent = new Intent(SettingsPageActivity.this, FavCounties.class);
+                startActivity(intent);
             }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {}
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {}
         });
-
-
 
 
         TextView info = findViewById(R.id.settings_info);
