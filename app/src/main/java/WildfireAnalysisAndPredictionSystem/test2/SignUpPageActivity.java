@@ -119,9 +119,9 @@ public class SignUpPageActivity extends AppCompatActivity {
 
                             User addingUser = new User(username,password,email,new ArrayList<>(),new ArrayList<>());
 
-                           db.collection("users").add(addingUser).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                           db.collection("users").document(auth.getUid()).set(addingUser).addOnCompleteListener(new OnCompleteListener<Void>() {
                                @Override
-                               public void onComplete(@NonNull Task<DocumentReference> task) {
+                               public void onComplete(@NonNull Task<Void> task) {
                                    if (task.isSuccessful()){
                                        dialog.dismiss();
                                        Toast.makeText(SignUpPageActivity.this,"Welcome to the WAPS",Toast.LENGTH_SHORT).show();
@@ -136,6 +136,7 @@ public class SignUpPageActivity extends AppCompatActivity {
                             Toast.makeText(SignUpPageActivity.this,"There is a problem try again",Toast.LENGTH_SHORT).show();
 
                         }
+
                     }
                 });
 

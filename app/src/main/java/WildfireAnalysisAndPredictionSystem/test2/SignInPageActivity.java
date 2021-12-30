@@ -1,12 +1,8 @@
 package WildfireAnalysisAndPredictionSystem.test2;
-
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -20,12 +16,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QuerySnapshot;
 
-import WildfireAnalysisAndPredictionSystem.test2.ui.HomeFragment;
 
 public class SignInPageActivity extends AppCompatActivity {
 
@@ -38,7 +30,8 @@ public class SignInPageActivity extends AppCompatActivity {
         FirebaseAuth auth;
 
         setTitle("Sign In");
-
+      /*  Intent intent_1 = new Intent(SignInPageActivity.this , BottomMenuActivity.class);
+        startActivity(intent_1);*/
         if(SaveSharedPreference.getUserName(SignInPageActivity.this).length() == 0)
         {
             EditText username = findViewById(R.id.input_username_sing_in);
@@ -52,6 +45,7 @@ public class SignInPageActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     Intent intent = new Intent(SignInPageActivity.this, SignUpPageActivity.class);
                     startActivity(intent);
+
                 }
             });
 

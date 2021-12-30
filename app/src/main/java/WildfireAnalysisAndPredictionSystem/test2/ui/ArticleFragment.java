@@ -13,6 +13,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,6 +22,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.firestore.EventListener;
@@ -45,6 +48,7 @@ public class ArticleFragment extends Fragment implements ArticleRecyclerViewAdap
     private ArticleRecyclerViewAdapter articleRecyclerViewAdapter;
     private FirebaseFirestore db;
     private View view;
+    private EditText article_search;
 
     @SuppressLint("NotifyDataSetChanged")
     @Override
@@ -59,7 +63,24 @@ public class ArticleFragment extends Fragment implements ArticleRecyclerViewAdap
         viewSettings();
         setHasOptionsMenu(true);
         recyclerView = view.findViewById(R.id.article_list);
-        articleRecyclerViewAdapter.notifyDataSetChanged();
+       // article_search = view.findViewById(R.id.article_search_bar);
+        /*article_search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(article_search.getText().toString().equals(""))
+                    viewSettings();
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });*/
         return view;
     }
 
@@ -84,11 +105,11 @@ public class ArticleFragment extends Fragment implements ArticleRecyclerViewAdap
     private void viewSettings() {
         recyclerView = view.findViewById(R.id.article_list);
         fillTheArray();
-
         Log.d("view ",articles.size()+"");
         articleRecyclerViewAdapter = new ArticleRecyclerViewAdapter(articles, this);
 
         recyclerView.setAdapter(articleRecyclerViewAdapter);
+        articleRecyclerViewAdapter.notifyDataSetChanged();
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
     }
@@ -118,9 +139,10 @@ public class ArticleFragment extends Fragment implements ArticleRecyclerViewAdap
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                articleRecyclerViewAdapter.getFilter().filter(newText);
+
                 Log.d("ARTICLE PAGE", "ONQUERYTEXTCHANGE");
                 if (articles.isEmpty()) {
+
                     Toast.makeText(getContext(), "We couldn't find any related article", Toast.LENGTH_SHORT).show();
                 }
                 return false;
@@ -128,11 +150,5 @@ public class ArticleFragment extends Fragment implements ArticleRecyclerViewAdap
         });
     }
 
-    class LoadingArticles extends AsyncTask<FirebaseFirestore,Integer,ArrayList> {
 
-        @Override
-        protected ArrayList doInBackground(FirebaseFirestore... firebaseFirestores) {
-            return null;
-        }
-    }
 }

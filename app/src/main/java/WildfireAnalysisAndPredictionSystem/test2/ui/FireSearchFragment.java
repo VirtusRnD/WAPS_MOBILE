@@ -43,6 +43,7 @@ import java.util.ArrayList;
 public class FireSearchFragment extends Fragment implements CountyRecyclerViewAdapter.OnCountyListener {
     String TAG = "FIRESEARCH";
     private ArrayList<County> counties;
+    ArrayList<String> countieArrayList;
     private ArrayList<Fire> fires;
     private RecyclerView recyclerView;
     private RecyclerView result;
@@ -138,6 +139,7 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
     private void viewSettingsFav() {
         recyclerView = view.findViewById(R.id.county_list);
         counties = new ArrayList<>();
+        countieArrayList = new ArrayList<>();
         fillTheArrayFav();
         countyRecyclerViewAdapter = new CountyRecyclerViewAdapter(counties,this);
         recyclerView.setAdapter(countyRecyclerViewAdapter);
@@ -145,24 +147,35 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
     }
 
     private void fillTheArrayFav() {
-        FirebaseUser user = auth.getCurrentUser();
-        Log.d(TAG,user.getEmail().toString());
+        searchForUser();
+        for (String county_name:countieArrayList) {
+            Log.d(TAG,county_name);
+            counties.add(new County(county_name,true));
+        }
 
-
-        counties.add(new County("Ula",true));
-        counties.add(new County("Menteşe",true));
-        counties.add(new County("Köyceğiz",true));
-        counties.add(new County("Marmaris",true));
-        counties.add(new County("Bodrum",true));
-        counties.add(new County("Dalaman",true));
-        counties.add(new County("Datça",true));
-        counties.add(new County("Milas",true));
-        counties.add(new County("Fethiye",true));
-        counties.add(new County("Kavaklıdere",true));
-        counties.add(new County("Yatağan",true));
     }
 
+    private void searchForUser() {
+        FirebaseUser user = auth.getCurrentUser();
+        String email = user.getEmail().toString();
 
+        Query query = db.collection("users");
+        query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+                    for(DocumentSnapshot doc: task.getResult()){
+                        if (doc.getString("email").equals(email)){
+                            countieArrayList = (ArrayList<String>) doc.get("counties");
+                            Log.d(TAG,countieArrayList.toString());
+                            break;
+                        }
+                    }
+                }
+            }
+        });
+
+    }
 
 
 }
