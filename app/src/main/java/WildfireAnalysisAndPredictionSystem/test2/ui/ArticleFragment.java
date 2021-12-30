@@ -32,6 +32,8 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 import WildfireAnalysisAndPredictionSystem.test2.Article;
@@ -84,27 +86,15 @@ public class ArticleFragment extends Fragment implements ArticleRecyclerViewAdap
         return view;
     }
 
-    private void fillTheArray() {
-        db.collection("articles").orderBy("year", Query.Direction.DESCENDING)
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @SuppressLint("NotifyDataSetChanged")
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                        if (error != null) {
-                            Toast.makeText(getContext(), "There is a connection problem", Toast.LENGTH_SHORT).show();
-                        }
-                        articles.clear();
-                        for (QueryDocumentSnapshot doc : value) {
-                            articles.add(doc.toObject(Article.class));
-                            articleRecyclerViewAdapter.notifyDataSetChanged();
-                        }
-                    }
-                });
-    }
+
 
     private void viewSettings() {
         recyclerView = view.findViewById(R.id.article_list);
-        fillTheArray();
+        AsyncTask loadTask = new LoadTask();
+        Integer[] list=new Integer[1];
+        list[0] = 0;
+        loadTask.execute(list);
+
         Log.d("view ",articles.size()+"");
         articleRecyclerViewAdapter = new ArticleRecyclerViewAdapter(articles, this);
 
@@ -141,13 +131,35 @@ public class ArticleFragment extends Fragment implements ArticleRecyclerViewAdap
             public boolean onQueryTextChange(String newText) {
 
                 Log.d("ARTICLE PAGE", "ONQUERYTEXTCHANGE");
-                if (articles.isEmpty()) {
 
+                    articleRecyclerViewAdapter.getFilter().filter(newText);
                     Toast.makeText(getContext(), "We couldn't find any related article", Toast.LENGTH_SHORT).show();
-                }
                 return false;
             }
         });
+    }
+
+    public class LoadTask extends AsyncTask<Integer,Integer,Integer>{
+
+        @Override
+        protected Integer doInBackground(Integer... integers) {
+            db.collection("articles").orderBy("year", Query.Direction.DESCENDING)
+                    .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        @Override
+                        public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                            if (error != null) {
+                                Toast.makeText(getContext(), "There is a connection problem", Toast.LENGTH_SHORT).show();
+                            }
+                            articles.clear();
+                            for (QueryDocumentSnapshot doc : value) {
+                                articles.add(doc.toObject(Article.class));
+                                articleRecyclerViewAdapter.notifyDataSetChanged();
+                            }
+                        }
+                    });
+            return null;
+        }
     }
 
 

@@ -30,8 +30,8 @@ public class SignInPageActivity extends AppCompatActivity {
         FirebaseAuth auth;
 
         setTitle("Sign In");
-      /*  Intent intent_1 = new Intent(SignInPageActivity.this , BottomMenuActivity.class);
-        startActivity(intent_1);*/
+       Intent intent_1 = new Intent(SignInPageActivity.this , BottomMenuActivity.class);
+        startActivity(intent_1);
         if(SaveSharedPreference.getUserName(SignInPageActivity.this).length() == 0)
         {
             EditText username = findViewById(R.id.input_username_sing_in);
