@@ -59,6 +59,7 @@ public class FriendsFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_friends, container, false);
@@ -69,7 +70,6 @@ public class FriendsFragment extends Fragment {
         list[0] = 0;
         AsyncTask<Integer,Integer,Integer> loadFriends = new LoadTask();
         loadFriends.execute(list);
-
         friendRecyclerViewAdapter.notifyDataSetChanged();
         return view;
     }
@@ -101,6 +101,7 @@ public class FriendsFragment extends Fragment {
                                 Log.d("TAG",user.getEmail());
                                 for(DocumentReference element: user.getFriends()){
                                     element.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                                        @SuppressLint("NotifyDataSetChanged")
                                         @Override
                                         public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                                             Log.d("TAG",value.getString("username"));

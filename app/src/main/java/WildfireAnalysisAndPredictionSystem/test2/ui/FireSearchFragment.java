@@ -36,21 +36,16 @@ import java.util.ArrayList;
 
 
 
-public class FireSearchFragment extends Fragment implements CountyRecyclerViewAdapter.OnCountyListener {
+public class FireSearchFragment extends Fragment {
     String TAG = "FIRESEARCH";
-    private ArrayList<County> counties;
-    ArrayList<String> countieArrayList;
     private ArrayList<Fire> fires;
-    private RecyclerView recyclerView;
     private RecyclerView result;
-    private CountyRecyclerViewAdapter countyRecyclerViewAdapter;
     private FireRecyclerViewAdapter fireRecyclerViewAdapter;
     private FirebaseFirestore firebaseFirestore;
     private View view;
     private EditText county_name;
     private EditText date;
-    private FirebaseAuth auth;
-    private FirebaseFirestore db;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,13 +54,10 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_fire_search, container, false);
-        db= FirebaseFirestore.getInstance();
-        auth = FirebaseAuth.getInstance();
+
         county_name = view.findViewById(R.id.search_county_input);
         date = view.findViewById(R.id.date_input);
-        viewSettingsFav();
-        countyRecyclerViewAdapter.notifyDataSetChanged();
-        recyclerView = view.findViewById(R.id.firends_list);
+
         Button search = view.findViewById(R.id.add_button);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,11 +67,7 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
         });
         return view;
     }
-    @Override
-    public void onCountyClick(int position) {
-        //TODO When the button clicked the star will be changed with an inverse one.
-        Log.d("SEARCH PAGE","Clicked" + position);
-    }
+
     private void fillTheArraySearch() {
         firebaseFirestore = FirebaseFirestore.getInstance();
         Query query =firebaseFirestore.collection("fires");
@@ -111,61 +99,8 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
         result.setAdapter(fireRecyclerViewAdapter);
         result.setLayoutManager(new LinearLayoutManager(getContext()));
     }
-    private void viewSettingsFav() {
-        recyclerView = view.findViewById(R.id.firends_list);
-        counties = new ArrayList<>();
-        countieArrayList = new ArrayList<>();
-        fillTheArrayFav();
-        countyRecyclerViewAdapter = new CountyRecyclerViewAdapter(counties,this);
-        recyclerView.setAdapter(countyRecyclerViewAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-    }
-
-    private void fillTheArrayFav() {
-        FirebaseUser user = auth.getCurrentUser();
-        Log.d(TAG,user.getEmail().toString());
 
 
-        counties.add(new County("Ula",true));
-        counties.add(new County("Menteşe",true));
-        counties.add(new County("Köyceğiz",true));
-        counties.add(new County("Marmaris",true));
-        counties.add(new County("Bodrum",true));
-        counties.add(new County("Dalaman",true));
-        counties.add(new County("Datça",true));
-        counties.add(new County("Milas",true));
-        counties.add(new County("Fethiye",true));
-        counties.add(new County("Kavaklıdere",true));
-        counties.add(new County("Yatağan",true));
-        searchForUser();
-        for (String county_name:countieArrayList) {
-            Log.d(TAG,county_name);
-            counties.add(new County(county_name,true));
-        }
-
-    }
-
-    private void searchForUser() {
-        FirebaseUser user = auth.getCurrentUser();
-        String email = user.getEmail().toString();
-
-        Query query = db.collection("users");
-        query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()){
-                    for(DocumentSnapshot doc: task.getResult()){
-                        if (doc.getString("email").equals(email)){
-                            countieArrayList = (ArrayList<String>) doc.get("counties");
-                            Log.d(TAG,countieArrayList.toString());
-                            break;
-                        }
-                    }
-                }
-            }
-        });
-
-    }
 
 
 }

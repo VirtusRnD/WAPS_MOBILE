@@ -7,4 +7,53 @@
     android:layout_height="match_parent"
     tools:context=".FavCounties">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  <TextView
+      android:id="@+id/fav_county"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+
+      android:layout_marginStart="10dp"
+      android:layout_marginTop="10dp"
+
+      android:text="  Favorite Counties"
+      android:textSize="16dp"
+
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <EditText
+      android:id="@+id/fav_input"
+      android:layout_width="0dp"
+      android:layout_height="40dp"
+      android:layout_marginStart="10dp"
+
+      android:layout_marginTop="5dp"
+
+      android:layout_marginEnd="10dp"
+      android:background="@drawable/box_red"
+
+      android:hint="  County Name"
+      android:inputType="textPersonName"
+      android:textSize="14dp"
+
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/fav_county" />
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/county_list"
+
+
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+
+      android:layout_marginTop="5dp"
+      android:layout_marginEnd="10dp"
+      android:layout_marginBottom="10dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="@id/fav_input"
+      app:layout_constraintTop_toBottomOf="@id/fav_input">
+
+  </androidx.recyclerview.widget.RecyclerView>
+</androidx.constraintlayout.widget.ConstraintLayout>
