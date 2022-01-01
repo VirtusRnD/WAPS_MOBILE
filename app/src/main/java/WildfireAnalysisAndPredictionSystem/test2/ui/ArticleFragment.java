@@ -13,8 +13,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -32,13 +30,10 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 
 import WildfireAnalysisAndPredictionSystem.test2.Article;
 import WildfireAnalysisAndPredictionSystem.test2.ArticleRecyclerViewAdapter;
-import WildfireAnalysisAndPredictionSystem.test2.BottomMenuActivity;
 import WildfireAnalysisAndPredictionSystem.test2.R;
 
 
@@ -90,7 +85,7 @@ public class ArticleFragment extends Fragment implements ArticleRecyclerViewAdap
 
     private void viewSettings() {
         recyclerView = view.findViewById(R.id.article_list);
-        AsyncTask loadTask = new LoadTask();
+        AsyncTask<Integer, Integer, Integer> loadTask = new LoadTask();
         Integer[] list=new Integer[1];
         list[0] = 0;
         loadTask.execute(list);

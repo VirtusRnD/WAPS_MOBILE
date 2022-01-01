@@ -1,18 +1,22 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
     private String username;
     private String password;
     private String email;
-    private List<User> friends;
+    private ArrayList<DocumentReference> friends;
     private List<County> counties;
 
     public User() {
     }
 
-    public User(String username, String password, String email, List<User> friends, List<County> counties) {
+    public User(String username, String password, String email, ArrayList<DocumentReference>  friends, List<County> counties) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -52,11 +56,11 @@ public class User {
         this.email = email;
     }
 
-    public List<User> getFriends() {
+    public ArrayList<DocumentReference>  getFriends() {
         return friends;
     }
 
-    public void setFriends(List<User> friends) {
+    public void setFriends(ArrayList<DocumentReference>  friends) {
         this.friends = friends;
     }
 }

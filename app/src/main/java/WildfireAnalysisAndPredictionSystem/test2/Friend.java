@@ -4,22 +4,16 @@ import android.media.Image;
 import android.widget.ImageButton;
 
 public class Friend {
-    private Image avatar;
+
     private String name;
-    private ImageButton added_or_not;
+    private String email;
 
-    public Friend(Image avatar, String name, ImageButton added_or_not) {
-        this.avatar = avatar;
+    public Friend() {
+    }
+
+    public Friend(String name, String email) {
         this.name = name;
-        this.added_or_not = added_or_not;
-    }
-
-    public Image getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(Image avatar) {
-        this.avatar = avatar;
+        this.email = email;
     }
 
     public String getName() {
@@ -30,11 +24,11 @@ public class Friend {
         this.name = name;
     }
 
-    public ImageButton getAdded_or_not() {
-        return added_or_not;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAdded_or_not(ImageButton added_or_not) {
-        this.added_or_not = added_or_not;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

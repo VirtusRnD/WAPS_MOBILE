@@ -38,8 +38,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SignUpPageActivity extends AppCompatActivity {
-    String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
-    Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
     FirebaseFirestore db;
     FirebaseAuth auth;
     DatabaseReference reference;
@@ -76,8 +74,7 @@ public class SignUpPageActivity extends AppCompatActivity {
         sign_in_director.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CharSequence inputStr = e_mail.getText().toString();
-                Matcher matcher = pattern.matcher(inputStr);
+                String email = e_mail.getText().toString();
                 dialog = new ProgressDialog(SignUpPageActivity.this);
                 dialog.setMessage("Please wait...");
                 dialog.show();
@@ -91,7 +88,7 @@ public class SignUpPageActivity extends AppCompatActivity {
                 }else if (userName.getText().toString().length() < 8) {
                         Toast.makeText(SignUpPageActivity.this, "Username should contain 8 character", Toast.LENGTH_SHORT).show();
                         return;
-                    } else if (!matcher.matches()) {
+                    } else if (isValidEmail(email)) {
                         Toast.makeText(SignUpPageActivity.this, "Please enter a valid e-mail", Toast.LENGTH_SHORT).show();
                         return;
 
@@ -153,5 +150,11 @@ public class SignUpPageActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public static boolean isValidEmail(String email){
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
 
 }

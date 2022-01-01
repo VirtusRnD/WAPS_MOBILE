@@ -5,8 +5,6 @@ import WildfireAnalysisAndPredictionSystem.test2.CountyRecyclerViewAdapter;
 import WildfireAnalysisAndPredictionSystem.test2.Fire;
 import WildfireAnalysisAndPredictionSystem.test2.FireRecyclerViewAdapter;
 import WildfireAnalysisAndPredictionSystem.test2.R;
-import WildfireAnalysisAndPredictionSystem.test2.SaveSharedPreference;
-import WildfireAnalysisAndPredictionSystem.test2.SignInPageActivity;
 
 
 import android.os.Bundle;
@@ -22,7 +20,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -33,7 +30,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.auth.User;
 
 
 import java.util.ArrayList;
@@ -69,7 +65,7 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
         date = view.findViewById(R.id.date_input);
         viewSettingsFav();
         countyRecyclerViewAdapter.notifyDataSetChanged();
-        recyclerView = view.findViewById(R.id.county_list);
+        recyclerView = view.findViewById(R.id.firends_list);
         Button search = view.findViewById(R.id.add_button);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,7 +112,7 @@ public class FireSearchFragment extends Fragment implements CountyRecyclerViewAd
         result.setLayoutManager(new LinearLayoutManager(getContext()));
     }
     private void viewSettingsFav() {
-        recyclerView = view.findViewById(R.id.county_list);
+        recyclerView = view.findViewById(R.id.firends_list);
         counties = new ArrayList<>();
         countieArrayList = new ArrayList<>();
         fillTheArrayFav();

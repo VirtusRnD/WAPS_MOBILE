@@ -1,50 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/box">
+    android:layout_margin="16dp"
+    android:elevation="8dp"
+    app:cardCornerRadius="6dp">
 
-    <ImageView
-        android:id="@+id/avatar"
-        app:srcCompat="@drawable/ic_android_friends"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        <TextView
+            android:id="@+id/user_name_single_friend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kullanıcı adı"
+            android:gravity="center_horizontal"
+            android:textSize="20sp"/>
 
-        app:layout_constraintBottom_toBottomOf="@+id/single_friend_name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/single_friend_name"
-
-        android:layout_marginStart="20dp" />
-
-    <TextView
-        android:id="@+id/single_friend_name"
-        android:text="TextView"
-        android:textSize="34sp"
-
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-
-        app:layout_constraintEnd_toStartOf="@+id/added_or_not"
-        app:layout_constraintStart_toEndOf="@+id/avatar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"/>
-
-    <ImageButton
-        android:id="@+id/added_or_not"
-        app:srcCompat="@android:drawable/checkbox_on_background"
-
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-
-        app:layout_constraintBottom_toBottomOf="@+id/single_friend_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/single_friend_name"
-
-        android:layout_marginEnd="20dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/email_single_friend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

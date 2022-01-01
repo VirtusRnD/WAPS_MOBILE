@@ -4,8 +4,7 @@ package WildfireAnalysisAndPredictionSystem.test2;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.ImageView;
+
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -31,11 +30,10 @@ public class FriendRecyclerViewAdapter extends RecyclerView.Adapter<FriendRecycl
 
     @Override
     public void onBindViewHolder(@NonNull FriendViewHolder holder, int position) {
-        //TODO Looking for image to image-bitmap casting.
-        //holder.avatar.setImageBitmap(friends.get(position).getAvatar());
+
         holder.name.setText(friends.get(position).getName());
-        //TODO Looking for image to image-bitmap casting. Same problem is here.
-        //holder.added_or_not.setImageIcon(friends.get(position).getAdded_or_not());
+        holder.email.setText(friends.get(position).getEmail());
+
     }
 
     @Override
@@ -44,14 +42,14 @@ public class FriendRecyclerViewAdapter extends RecyclerView.Adapter<FriendRecycl
     }
 
     public class FriendViewHolder extends RecyclerView.ViewHolder{
-        ImageView avatar;
+        TextView email;
         TextView name;
-        ImageButton added_or_not;
+
         public FriendViewHolder(@NonNull View itemView) {
             super(itemView);
-            avatar = itemView.findViewById(R.id.avatar);
-            name = itemView.findViewById(R.id.single_friend_name);
-            added_or_not = itemView.findViewById(R.id.added_or_not);
+            email = itemView.findViewById(R.id.email_single_friend);
+            name = itemView.findViewById(R.id.user_name_single_friend);
+
         }
     }
 
