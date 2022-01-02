@@ -31,6 +31,7 @@ public class PopDeleteAccount extends Activity {
                 SaveSharedPreference.clearUserName(PopDeleteAccount.this);
                 Intent intent = new Intent(PopDeleteAccount.this, SignInPageActivity.class);
                 startActivity(intent);
+                finishAffinity();
                 //TODO somehow kill settingsPage for the user not being able to sign in by back button
             }
         });

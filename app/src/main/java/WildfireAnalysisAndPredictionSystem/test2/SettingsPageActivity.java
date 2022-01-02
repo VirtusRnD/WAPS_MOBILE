@@ -141,7 +141,6 @@ public class SettingsPageActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(SettingsPageActivity.this, PopDeleteAccount.class);
                 startActivity(intent);
-                finishAffinity();
             }
         });
     }
