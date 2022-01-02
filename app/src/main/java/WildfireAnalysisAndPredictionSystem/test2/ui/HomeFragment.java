@@ -21,7 +21,9 @@ import WildfireAnalysisAndPredictionSystem.test2.SettingsPageActivity;
 import WildfireAnalysisAndPredictionSystem.test2.TempNotificationRecyclerViewAdapter;
 import WildfireAnalysisAndPredictionSystem.test2.TempNotifications;
 
-
+/**
+ * @author hasanaliozkan
+ * **/
 public class HomeFragment extends Fragment {
 
     private View view;

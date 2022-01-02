@@ -1,7 +1,9 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
 
-
+/**
+ * @author hasanaliozkan
+ * **/
 public class Fire {
 private String countyName;
 private String date;

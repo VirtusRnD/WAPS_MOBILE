@@ -41,6 +41,10 @@ public class PopDeleteAccount extends Activity {
 
         getWindow().setLayout((int)(width*.8),(int)(height*.25));
         /** @author Mehmet Kadri Gofralılar**/
+
+        /**
+         * @author hasanaliozkan from 48 to 105
+         * **/
         db= FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();

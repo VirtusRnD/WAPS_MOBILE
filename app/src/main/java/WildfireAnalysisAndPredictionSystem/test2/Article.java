@@ -1,5 +1,8 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
+/**
+ * @author hasanaliozkan
+ * **/
 public class Article {
 
     private String authors;

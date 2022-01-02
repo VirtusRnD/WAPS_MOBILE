@@ -1,5 +1,8 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
+/**
+ * @author hasanaliozkan
+ * **/
 public class County {
     private String countyName;
     private Boolean isFav;

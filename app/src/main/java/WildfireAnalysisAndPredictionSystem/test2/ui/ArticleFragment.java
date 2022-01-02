@@ -36,7 +36,9 @@ import WildfireAnalysisAndPredictionSystem.test2.Article;
 import WildfireAnalysisAndPredictionSystem.test2.ArticleRecyclerViewAdapter;
 import WildfireAnalysisAndPredictionSystem.test2.R;
 
-
+/**
+ * @author hasanaliozkan
+ * **/
 public class ArticleFragment extends Fragment implements ArticleRecyclerViewAdapter.OnArticleListener{
 
 

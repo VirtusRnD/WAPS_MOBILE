@@ -18,7 +18,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
+/**
+ * @author hasanaliozkan
+ * **/
 public class ArticleRecyclerViewAdapter extends RecyclerView.Adapter<ArticleRecyclerViewAdapter.MyViewHolder> implements Filterable {
     private List<Article> articles;
     private OnArticleListener onArticleListener;

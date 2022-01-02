@@ -44,7 +44,6 @@
         <entry key="..\:/Users/mehme/Desktop/Finals/mobile_application_development_final/FinalProject/app/src/main/res/layout/activity_fav_counties.xml" value="0.259375" />
         <entry key="..\:/Users/mehme/Desktop/Finals/mobile_application_development_final/FinalProject/app/src/main/res/layout/activity_nav_drawer.xml" value="0.3555858310626703" />
         <entry key="..\:/Users/mehme/Desktop/Finals/mobile_application_development_final/FinalProject/app/src/main/res/layout/activity_settings_page.xml" value="0.4839650145772595" />
-        <entry key="..\:/Users/mehme/Desktop/Finals/mobile_application_development_final/FinalProject/app/src/main/res/layout/activity_sign_in_page.xml" value="0.1527777777777778" />
         <entry key="..\:/Users/mehme/Desktop/Finals/mobile_application_development_final/FinalProject/app/src/main/res/layout/fragment_account_settings.xml" value="0.2101851851851852" />
         <entry key="..\:/Users/mehme/Desktop/Finals/mobile_application_development_final/FinalProject/app/src/main/res/layout/fragment_fire_search.xml" value="0.259375" />
         <entry key="..\:/Users/mehme/Desktop/Finals/mobile_application_development_final/FinalProject/app/src/main/res/layout/fragment_main_menu.xml" value="0.2101851851851852" />
@@ -94,6 +93,7 @@
         <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.11925675675675676" />
         <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.11925675675675676" />
         <entry key="app/src/main/res/drawable/ic_star.xml" value="0.11925675675675676" />
+        <entry key="app/src/main/res/drawable/oval.xml" value="0.2114864864864865" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.11925675675675676" />
         <entry key="app/src/main/res/layout/activity_about_us.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_articles_page.xml" value="0.22407407407407406" />
@@ -108,6 +108,7 @@
         <entry key="app/src/main/res/layout/activity_pop_email.xml" value="0.11114864864864865" />
         <entry key="app/src/main/res/layout/activity_pop_password.xml" value="0.20101351351351351" />
         <entry key="app/src/main/res/layout/activity_search_page.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_send_email.xml" value="0.20101351351351351" />
         <entry key="app/src/main/res/layout/activity_settings_page.xml" value="0.27118764426071434" />
         <entry key="app/src/main/res/layout/activity_sign_in_page.xml" value="0.20101351351351351" />
         <entry key="app/src/main/res/layout/activity_sign_up_page.xml" value="0.3098958333333333" />
@@ -139,6 +140,7 @@
         <entry key="app/src/main/res/menu/nav_menu.xml" value="0.20101351351351351" />
         <entry key="app/src/main/res/menu/search_menu.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/menu/settings_menu.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/signup_round.xml" value="0.2114864864864865" />
       </map>
     </option>
   </component>

@@ -7,8 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.loader.content.AsyncTaskLoader;
-import androidx.recyclerview.widget.AsyncDifferConfig;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,38 +15,34 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 
 import java.util.ArrayList;
-import java.util.Collection;
 
-import WildfireAnalysisAndPredictionSystem.test2.Article;
 import WildfireAnalysisAndPredictionSystem.test2.Friend;
 import WildfireAnalysisAndPredictionSystem.test2.FriendRecyclerViewAdapter;
 import WildfireAnalysisAndPredictionSystem.test2.R;
 import WildfireAnalysisAndPredictionSystem.test2.User;
 
-
+/**
+ * @author hasanaliozkan
+ * **/
 public class FriendsFragment extends Fragment {
 
     private ArrayList<Friend> friends;
-    //ArrayList<DocumentReference> friends;
+
 
     private RecyclerView recyclerView;
     private FriendRecyclerViewAdapter friendRecyclerViewAdapter;

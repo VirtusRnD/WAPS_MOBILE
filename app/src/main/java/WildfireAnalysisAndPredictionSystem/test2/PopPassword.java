@@ -47,6 +47,9 @@ public class PopPassword extends Activity {
         getWindow().setLayout((int)(width*.8),(int)(height*.4));
         /** @author Mehmet Kadri Gofralılar**/
 
+        /**
+         * @author hasanaliozkan from 53 to 109
+         * **/
         db= FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();

@@ -1,11 +1,13 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
-import com.google.firebase.auth.FirebaseUser;
+
 import com.google.firebase.firestore.DocumentReference;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @author hasanaliozkan
+ * **/
 public class User {
     private String username;
     private String password;

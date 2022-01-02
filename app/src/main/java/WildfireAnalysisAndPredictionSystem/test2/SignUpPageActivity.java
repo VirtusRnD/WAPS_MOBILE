@@ -37,10 +37,12 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * @author hasanaliozkan
+ * **/
 public class SignUpPageActivity extends AppCompatActivity {
     FirebaseFirestore db;
     FirebaseAuth auth;
-    DatabaseReference reference;
     ProgressDialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -9,7 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-
+/**
+ * @author hasanaliozkan
+ * **/
 public class FireRecyclerViewAdapter extends RecyclerView.Adapter<FireRecyclerViewAdapter.FireViewHolder> {
 
     private ArrayList<Fire> fires;

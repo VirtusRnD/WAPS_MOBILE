@@ -12,7 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @author hasanaliozkan
+ * **/
 public class CountyRecyclerViewAdapter extends RecyclerView.Adapter<CountyRecyclerViewAdapter.CountyHolder> {
     private List<County> counties;
     private CountyRecyclerViewAdapter.OnCountyListener onCountyListener;

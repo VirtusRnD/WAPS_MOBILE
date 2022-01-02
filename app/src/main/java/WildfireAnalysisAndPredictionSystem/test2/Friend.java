@@ -1,8 +1,9 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
-import android.media.Image;
-import android.widget.ImageButton;
 
+/**
+ * @author hasanaliozkan
+ * **/
 public class Friend {
 
     private String name;

@@ -1,5 +1,7 @@
 package WildfireAnalysisAndPredictionSystem.test2;
-
+/**
+ * @author hasanaliozkan
+ * **/
 public class TempNotifications {
 
     String sentence;

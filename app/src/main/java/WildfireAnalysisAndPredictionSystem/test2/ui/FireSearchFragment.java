@@ -1,6 +1,6 @@
 package WildfireAnalysisAndPredictionSystem.test2.ui;
 
-import WildfireAnalysisAndPredictionSystem.test2.BottomMenuActivity;
+
 import WildfireAnalysisAndPredictionSystem.test2.Fire;
 import WildfireAnalysisAndPredictionSystem.test2.FireRecyclerViewAdapter;
 import WildfireAnalysisAndPredictionSystem.test2.R;
@@ -32,7 +32,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 
 
-
+/**
+ * @author hasanaliozkan
+ * **/
 public class FireSearchFragment extends Fragment {
     String TAG = "FIRESEARCH";
     private ArrayList<Fire> fires;

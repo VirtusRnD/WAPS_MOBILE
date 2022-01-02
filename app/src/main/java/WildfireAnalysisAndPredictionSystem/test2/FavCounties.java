@@ -20,7 +20,9 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-
+/**
+ * @author hasanaliozkan
+ * **/
 public class FavCounties extends AppCompatActivity implements CountyRecyclerViewAdapter.OnCountyListener {
     private CountyRecyclerViewAdapter countyRecyclerViewAdapter;
     private ArrayList<County> counties;

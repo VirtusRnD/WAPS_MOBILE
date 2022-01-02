@@ -48,7 +48,9 @@ public class PopUsername extends Activity {
         getWindow().setLayout((int)(width*.8),(int)(height*.3));
         /** @author Mehmet Kadri Gofralılar**/
 
-
+        /**
+         * @author hasanaliozkan from 54 to 111
+         * **/
         db = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
