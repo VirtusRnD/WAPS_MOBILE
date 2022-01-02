@@ -69,20 +69,27 @@ public class FavCounties extends AppCompatActivity implements CountyRecyclerView
     }
 
     private void fillTheArrayFav() {
+        FirebaseUser currentUser = auth.getCurrentUser();
+        db.collection("users").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+                    for(DocumentSnapshot doc:task.getResult()){
+                        if (doc.getId().equals(currentUser.getUid())){
+                            User user = doc.toObject(User.class);
 
 
-        counties.add(new County("Ula", true));
-        counties.add(new County("Menteşe", true));
-        counties.add(new County("Köyceğiz", true));
-        counties.add(new County("Marmaris", true));
-        counties.add(new County("Bodrum", true));
-        counties.add(new County("Dalaman", true));
-        counties.add(new County("Datça", true));
-        counties.add(new County("Milas", true));
-        counties.add(new County("Fethiye", true));
-        counties.add(new County("Kavaklıdere", true));
-        counties.add(new County("Yatağan", true));
-        searchForUser();
+                            for (String countyName:user.getCounties()){
+                                County county = new County(countyName,true);
+                                counties.add(county);
+                                countyRecyclerViewAdapter.notifyDataSetChanged();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
         for (String county_name : countieArrayList) {
             Log.d(TAG, county_name);
             counties.add(new County(county_name, true));
@@ -90,27 +97,7 @@ public class FavCounties extends AppCompatActivity implements CountyRecyclerView
 
     }
 
-    private void searchForUser() {
-        FirebaseUser user = auth.getCurrentUser();
-        String email = user.getEmail().toString();
 
-        Query query = db.collection("users");
-        query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    for (DocumentSnapshot doc : task.getResult()) {
-                        if (doc.getString("email").equals(email)) {
-                            countieArrayList = (ArrayList<String>) doc.get("counties");
-                            Log.d(TAG, countieArrayList.toString());
-                            break;
-                        }
-                    }
-                }
-            }
-        });
-
-    }
 
     @Override
     public void onCountyClick(int position) {
