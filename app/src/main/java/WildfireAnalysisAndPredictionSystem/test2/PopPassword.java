@@ -32,7 +32,6 @@ public class PopPassword extends Activity {
     FirebaseAuth auth ;
     FirebaseUser user;
     FirebaseFirestore db;
-    String username;
     String password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +71,7 @@ public class PopPassword extends Activity {
                             if(task.isSuccessful()){
                                 for(DocumentSnapshot doc: task.getResult()){
                                     if (doc.getId().equals(user.getUid())){
-                                        username = doc.getString("username");
+
                                         password = doc.getString("password");
 
                                         if (!new_password.getText().toString().equals(confirm_new_password.getText().toString())){
@@ -83,6 +82,7 @@ public class PopPassword extends Activity {
                                         }else{
                                             HashMap<String,String> addPass= new HashMap<>();
                                             addPass.put("password",new_password.getText().toString());
+                                            user.updatePassword(new_password.getText().toString());
                                             db.collection("users").document(user.getUid()).set(addPass, SetOptions.merge()).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
