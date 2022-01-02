@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".FavCounties">
 
+  <!--Author: Mehmet Kadri Gofralılar-->
+
 
   <EditText
       android:id="@+id/fav_input"

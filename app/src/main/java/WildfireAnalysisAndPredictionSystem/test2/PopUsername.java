@@ -39,15 +39,14 @@ public class PopUsername extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_username);
 
+        /** @author Mehmet Kadri Gofralılar**/
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
         int width = dm.widthPixels;
         int height = dm.heightPixels;
         getWindow().setLayout((int)(width*.8),(int)(height*.3));
-
-
-
+        /** @author Mehmet Kadri Gofralılar**/
 
 
         db = FirebaseFirestore.getInstance();

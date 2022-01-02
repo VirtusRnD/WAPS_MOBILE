@@ -3,7 +3,7 @@ package WildfireAnalysisAndPredictionSystem.test2;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-
+/** @author Mehmet Kadri Gofralılar**/
 public class SaveSharedPreference {
     static final String PREF_USER_NAME= "username";
 

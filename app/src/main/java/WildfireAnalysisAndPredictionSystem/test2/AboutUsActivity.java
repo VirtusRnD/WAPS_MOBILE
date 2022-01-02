@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-
+/** @author Mehmet Kadri Gofralılar**/
 public class AboutUsActivity extends AppCompatActivity {
 
     @Override

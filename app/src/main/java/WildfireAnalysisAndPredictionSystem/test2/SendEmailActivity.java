@@ -11,7 +11,7 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
+/** @author Mehmet Kadri Gofralılar**/
 public class SendEmailActivity extends AppCompatActivity {
     EditText editTextSubject,editTextMessage;
     Button send;

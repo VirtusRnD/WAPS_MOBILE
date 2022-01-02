@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
-
+/** @author Mehmet Kadri Gofralılar**/
 public class SettingsPageActivity extends AppCompatActivity {
 
     @Override

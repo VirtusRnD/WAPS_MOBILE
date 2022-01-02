@@ -31,8 +31,6 @@ public class SignInPageActivity extends AppCompatActivity {
 
         setTitle("Sign In");
 
-        //startActivity(new Intent(SignInPageActivity.this , BottomMenuActivity.class));
-
         if(SaveSharedPreference.getUserName(SignInPageActivity.this).length() == 0)
         {
             EditText username = findViewById(R.id.input_username_sing_in);

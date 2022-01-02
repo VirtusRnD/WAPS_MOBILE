@@ -11,7 +11,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import WildfireAnalysisAndPredictionSystem.test2.databinding.ActivityBottomMenuBinding;
-
+/** @author Mehmet Kadri Gofralılar**/
 public class BottomMenuActivity extends AppCompatActivity {
 
     private ActivityBottomMenuBinding binding;
@@ -24,8 +24,6 @@ public class BottomMenuActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_article, R.id.navigation_search, R.id.navigation_home, R.id.navigation_friends, R.id.navigation_add_fire)

@@ -6,6 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.FriendsFragment">
 
+    <!--Author: Mehmet Kadri Gofralılar-->
+
 
     <ScrollView
         android:id="@+id/scrollView2"

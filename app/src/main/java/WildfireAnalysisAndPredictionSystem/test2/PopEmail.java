@@ -35,9 +35,8 @@ public class PopEmail extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_pop_email);
-
+        /** @author Mehmet Kadri Gofralılar**/
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
@@ -46,7 +45,7 @@ public class PopEmail extends Activity {
         int height = dm.heightPixels;
 
         getWindow().setLayout((int)(width*.8),(int)(height*.4));
-
+        /** @author Mehmet Kadri Gofralılar**/
         db= FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
