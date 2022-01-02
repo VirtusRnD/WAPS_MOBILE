@@ -13,18 +13,18 @@ public class User {
     private String password;
     private String email;
     private ArrayList<DocumentReference> friends;
-    private List<County> counties;
+    private List<String> counties;
 
     public User() {
     }
-
+/*
     public User(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
     }
-
-    public User(String username, String password, String email, ArrayList<DocumentReference>  friends, List<County> counties) {
+*/
+    public User(String username, String password, String email, ArrayList<DocumentReference>  friends, ArrayList<String> counties) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -32,11 +32,11 @@ public class User {
         this.counties = counties;
     }
 
-    public List<County> getCounties() {
+    public List<String> getCounties() {
         return counties;
     }
 
-    public void setCounties(List<County> counties) {
+    public void setCounties(List<String> counties) {
         this.counties = counties;
     }
 

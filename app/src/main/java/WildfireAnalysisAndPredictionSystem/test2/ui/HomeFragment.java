@@ -18,6 +18,8 @@ import java.util.ArrayList;
 
 import WildfireAnalysisAndPredictionSystem.test2.R;
 import WildfireAnalysisAndPredictionSystem.test2.SettingsPageActivity;
+import WildfireAnalysisAndPredictionSystem.test2.TempDailyWildfires;
+import WildfireAnalysisAndPredictionSystem.test2.TempDailyWildfiresRecyclerViewAdapter;
 import WildfireAnalysisAndPredictionSystem.test2.TempNotificationRecyclerViewAdapter;
 import WildfireAnalysisAndPredictionSystem.test2.TempNotifications;
 
@@ -28,8 +30,12 @@ public class HomeFragment extends Fragment {
 
     private View view;
     private ArrayList<TempNotifications> notifications;
-    private RecyclerView recyclerView;
+    private ArrayList<TempDailyWildfires> dailyWildfires;
+    private RecyclerView recyclerViewNotifications;
+    private RecyclerView recyclerViewDailyWildfires;
     private TempNotificationRecyclerViewAdapter tempNotificationRecyclerViewAdapter;
+    private TempDailyWildfiresRecyclerViewAdapter tempDailyWildfiresRecyclerViewAdapter;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,10 +46,13 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_main_menu,container,false);
         setHasOptionsMenu(true);
-        viewSettings();
-        fillTheArray();
+        viewSettingsNotifications();
+        fillTheArrayNotifications();
         tempNotificationRecyclerViewAdapter.notifyDataSetChanged();
 
+        viewSettingsDailyWildFires();
+        fillTheArrayDailyWildfires();
+        tempDailyWildfiresRecyclerViewAdapter.notifyDataSetChanged();
         return view;
     }
     @Override
@@ -62,7 +71,7 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    private void fillTheArray() {
+    private void fillTheArrayNotifications() {
         String firstPart = "There is a fire at ";
         String secondPart = "county and at ";
         notifications.add(new TempNotifications(firstPart+"Ula"+secondPart+"14:53"));
@@ -73,16 +82,39 @@ public class HomeFragment extends Fragment {
         notifications.add(new TempNotifications(firstPart+"Bodrum"+secondPart+"09:56"));
         notifications.add(new TempNotifications(firstPart+"Dalaman"+secondPart+"12:41"));
 
+
+
     }
 
-    private void viewSettings() {
-        recyclerView = view.findViewById(R.id.not_hist);
+    private void viewSettingsNotifications() {
+        recyclerViewNotifications = view.findViewById(R.id.not_hist);
         notifications = new ArrayList<>();
         tempNotificationRecyclerViewAdapter = new TempNotificationRecyclerViewAdapter(notifications);
-        recyclerView.setAdapter(tempNotificationRecyclerViewAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewNotifications.setAdapter(tempNotificationRecyclerViewAdapter);
+        recyclerViewNotifications.setLayoutManager(new LinearLayoutManager(getContext()));
 
     }
 
+    private void viewSettingsDailyWildFires() {
+        recyclerViewDailyWildfires = view.findViewById(R.id.daily_wildf);
+        dailyWildfires = new ArrayList<>();
+        tempDailyWildfiresRecyclerViewAdapter = new TempDailyWildfiresRecyclerViewAdapter(dailyWildfires);
+        recyclerViewDailyWildfires.setAdapter(tempDailyWildfiresRecyclerViewAdapter);
+        recyclerViewDailyWildfires.setLayoutManager(new LinearLayoutManager(getContext()));
+
+    }
+
+    private void fillTheArrayDailyWildfires() {
+        String firstPart = "There is a fire at ";
+        dailyWildfires.add(new TempDailyWildfires(firstPart+"Ula"));
+        dailyWildfires.add(new TempDailyWildfires(firstPart+"Menteşe"));
+        dailyWildfires.add(new TempDailyWildfires(firstPart+"Marmaris"));
+        dailyWildfires.add(new TempDailyWildfires(firstPart+"Bodrum"));
+        dailyWildfires.add(new TempDailyWildfires(firstPart+"Dalaman"));
+        dailyWildfires.add(new TempDailyWildfires(firstPart+"Datça"));
+
+
+
+    }
 
 }

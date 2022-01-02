@@ -30,6 +30,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import WildfireAnalysisAndPredictionSystem.test2.Friend;
 import WildfireAnalysisAndPredictionSystem.test2.FriendRecyclerViewAdapter;
@@ -42,8 +43,6 @@ import WildfireAnalysisAndPredictionSystem.test2.User;
 public class FriendsFragment extends Fragment {
 
     private ArrayList<Friend> friends;
-
-
     private RecyclerView recyclerView;
     private FriendRecyclerViewAdapter friendRecyclerViewAdapter;
     private View view;
@@ -60,26 +59,32 @@ public class FriendsFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_friends, container, false);
         db = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
+
+
         viewSettings();
+
+        AsyncTask<Integer, Integer, Integer> loadTask =new LoadFriendTask();
         Integer[] list=new Integer[1];
         list[0] = 0;
-        AsyncTask<Integer,Integer,Integer> loadFriends = new LoadTask();
-        loadFriends.execute(list);
+        loadTask.execute(list[0]);
         friendRecyclerViewAdapter.notifyDataSetChanged();
         return view;
     }
 
 
-
     private void viewSettings() {
         recyclerView = view.findViewById(R.id.firends_list);
         friends = new ArrayList<>();
+
         friendRecyclerViewAdapter = new FriendRecyclerViewAdapter(friends);
         recyclerView.setAdapter(friendRecyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
+    private void fillTheArray() {
 
-    public class LoadTask extends AsyncTask<Integer,Integer,Integer> {
+    }
+    public class LoadFriendTask extends AsyncTask<Integer,Integer,Integer>{
+
 
         @Override
         protected Integer doInBackground(Integer... integers) {
@@ -89,35 +94,41 @@ public class FriendsFragment extends Fragment {
                 @Override
                 public  void onComplete(@NonNull Task<QuerySnapshot> task) {
                     if (task.isSuccessful()){
-                        for(DocumentSnapshot doc :task.getResult()){
+                        for(DocumentSnapshot doc : task.getResult()){
+                            assert currentUser != null;
                             if (doc.getId().equals(currentUser.getUid())){
                                 User user = doc.toObject(User.class);
-                                Log.d("TAG",user.getUsername());
-                                Log.d("TAG",user.getEmail());
-                                for(DocumentReference element: user.getFriends()){
-                                    element.addSnapshotListener(new EventListener<DocumentSnapshot>() {
-                                        @SuppressLint("NotifyDataSetChanged")
-                                        @Override
-                                        public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                                            Log.d("TAG",value.getString("username"));
-                                            Friend friend = new Friend();
-                                            friend.setName(value.getString("username"));
-                                            friend.setEmail(value.getString("email"));
-                                            friends.add(friend);
-                                            friendRecyclerViewAdapter.notifyDataSetChanged();
-                                            Log.d("TAGG",user.getUsername());
-                                            Log.d("TAGG",user.getEmail());
-                                        }
-                                    });
+
+                                //Log.d("TAG",""+currentUser.getEmail());
+
+                                if(user != null){
+
+                                    for(DocumentReference element: user.getFriends()){
+                                        element.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                                            @SuppressLint("NotifyDataSetChanged")
+                                            @Override
+                                            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                                                // Log.d("TAG",value.getString("username"));
+                                                Friend friend = new Friend();
+                                                friend.setName(value.getString("username"));
+                                                friend.setEmail(value.getString("email"));
+                                                friends.add(friend);
+                                                friendRecyclerViewAdapter.notifyDataSetChanged();
+                                                //   Log.d("TAGG",user.getUsername());
+                                                //   Log.d("TAGG",user.getEmail());
+                                            }
+                                        });
+                                    }
                                 }
                             }
                         }
                     }
                 }
             });
-
             return null;
         }
     }
+
+
 
 }

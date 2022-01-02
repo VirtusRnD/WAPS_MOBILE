@@ -22,14 +22,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
  * @author hasanaliozkan
  * **/
 public class SignInPageActivity extends AppCompatActivity {
+    private FirebaseAuth auth;
 
-    private FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in_page);
-        db = FirebaseFirestore.getInstance();
-        FirebaseAuth auth;
+
 
         setTitle("Sign In");
 
