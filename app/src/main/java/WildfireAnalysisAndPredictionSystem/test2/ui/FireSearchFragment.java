@@ -59,13 +59,13 @@ public class FireSearchFragment extends Fragment {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewSettingsSearch();
+                viewSettings();
             }
         });
         return view;
     }
 
-    private void fillTheArraySearch() {
+    private void fillTheArray() {
 
         firebaseFirestore = FirebaseFirestore.getInstance();
         Query query =firebaseFirestore.collection("fires");
@@ -93,11 +93,11 @@ public class FireSearchFragment extends Fragment {
         });
 
     }
-    private void viewSettingsSearch() {
+    private void viewSettings() {
         Log.d(TAG,"viewSeattingsSearch");
         result = view.findViewById(R.id.result_list);
         fires = new ArrayList<>();
-        fillTheArraySearch();
+        fillTheArray();
         fireRecyclerViewAdapter = new FireRecyclerViewAdapter(fires);
         result.setAdapter(fireRecyclerViewAdapter);
         result.setLayoutManager(new LinearLayoutManager(getContext()));

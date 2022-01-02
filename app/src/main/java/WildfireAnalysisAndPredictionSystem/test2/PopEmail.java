@@ -76,6 +76,7 @@ public class PopEmail extends Activity {
                                         }else{
                                             HashMap<String,String> addEmail= new HashMap<>();
                                             addEmail.put("email",newEmail.getText().toString());
+                                            
                                             user.updateEmail(newEmail.getText().toString());
                                             db.collection("users").document(user.getUid()).set(addEmail, SetOptions.merge()).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
