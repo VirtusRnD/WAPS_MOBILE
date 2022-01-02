@@ -88,7 +88,7 @@ public class SignUpPageActivity extends AppCompatActivity {
                 }else if (userName.getText().toString().length() < 8) {
                         Toast.makeText(SignUpPageActivity.this, "Username should contain 8 character", Toast.LENGTH_SHORT).show();
                         return;
-                    } else if (isValidEmail(email)) {
+                    } else if (!isValidEmail(email)) {
                         Toast.makeText(SignUpPageActivity.this, "Please enter a valid e-mail", Toast.LENGTH_SHORT).show();
                         return;
 

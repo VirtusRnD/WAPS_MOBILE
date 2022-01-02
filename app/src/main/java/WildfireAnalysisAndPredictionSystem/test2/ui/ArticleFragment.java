@@ -59,25 +59,9 @@ public class ArticleFragment extends Fragment implements ArticleRecyclerViewAdap
         db = FirebaseFirestore.getInstance();
         viewSettings();
         setHasOptionsMenu(true);
+
         recyclerView = view.findViewById(R.id.article_list);
-       // article_search = view.findViewById(R.id.article_search_bar);
-        /*article_search.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(article_search.getText().toString().equals(""))
-                    viewSettings();
-            }
 
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });*/
         return view;
     }
 
@@ -124,9 +108,7 @@ public class ArticleFragment extends Fragment implements ArticleRecyclerViewAdap
 
             @Override
             public boolean onQueryTextChange(String newText) {
-
                 Log.d("ARTICLE PAGE", "ONQUERYTEXTCHANGE");
-
                     articleRecyclerViewAdapter.getFilter().filter(newText);
                     Toast.makeText(getContext(), "We couldn't find any related article", Toast.LENGTH_SHORT).show();
                 return false;
