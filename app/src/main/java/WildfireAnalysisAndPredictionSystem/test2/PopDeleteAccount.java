@@ -32,7 +32,7 @@ public class PopDeleteAccount extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_pop_delete_account);
-
+        /** @author Mehmet Kadri Gofralılar**/
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
@@ -40,7 +40,7 @@ public class PopDeleteAccount extends Activity {
         int height = dm.heightPixels;
 
         getWindow().setLayout((int)(width*.8),(int)(height*.25));
-
+        /** @author Mehmet Kadri Gofralılar**/
         db= FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
