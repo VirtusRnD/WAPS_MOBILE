@@ -29,7 +29,7 @@ public class FireRecyclerViewAdapter extends RecyclerView.Adapter<FireRecyclerVi
     @Override
     public void onBindViewHolder(@NonNull FireViewHolder holder, int position) {
         holder.county.setText(fires.get(position).getCountyName());
-        holder.date.setText(fires.get(position).getDate().toString());
+        holder.date.setText(fires.get(position).getDate());
     }
 
     @Override

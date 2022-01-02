@@ -1,9 +1,9 @@
 package WildfireAnalysisAndPredictionSystem.test2.ui;
 
+import WildfireAnalysisAndPredictionSystem.test2.BottomMenuActivity;
 import WildfireAnalysisAndPredictionSystem.test2.Fire;
 import WildfireAnalysisAndPredictionSystem.test2.FireRecyclerViewAdapter;
 import WildfireAnalysisAndPredictionSystem.test2.R;
-
 
 import android.os.Bundle;
 
@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -65,6 +66,7 @@ public class FireSearchFragment extends Fragment {
     }
 
     private void fillTheArraySearch() {
+
         firebaseFirestore = FirebaseFirestore.getInstance();
         Query query =firebaseFirestore.collection("fires");
         query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -72,19 +74,24 @@ public class FireSearchFragment extends Fragment {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()){
                     for(DocumentSnapshot doc : task.getResult()){
-                        Log.d(TAG,doc.getString("county"));
+                      //  Log.d(TAG,doc.getString("county"));
                         if (doc.getString("county").trim().toLowerCase().equals(county_name.getText().toString().trim().toLowerCase())){
-                            Log.d(TAG,doc.getString("county"));
-                            Fire tempFire = new Fire();
-                            tempFire.setCountyName(doc.getString("county"));
-                            tempFire.setDate(doc.getDate("date"));
+                           // Log.d(TAG,doc.getString("county"));
+                            Fire tempFire = new Fire(doc.getString("county"),
+                                    doc.getString("date")+" - "+doc.getString("time").replace('-',':'));
                             fires.add(tempFire);
                             fireRecyclerViewAdapter.notifyDataSetChanged();
+
                         }
+
                     }
+                }else{
+                    Toast.makeText(getContext(),"There is a problem please try again",Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
+
     }
     private void viewSettingsSearch() {
         Log.d(TAG,"viewSeattingsSearch");

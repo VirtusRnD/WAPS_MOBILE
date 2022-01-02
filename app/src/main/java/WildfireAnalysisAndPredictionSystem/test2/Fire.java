@@ -1,18 +1,15 @@
 package WildfireAnalysisAndPredictionSystem.test2;
 
-import com.google.firebase.Timestamp;
 
-import java.sql.Time;
-import java.util.Date;
 
 public class Fire {
 private String countyName;
-private Date date;
+private String date;
 
     public Fire() {
     }
 
-    public Fire(String countyName, Date date) {
+    public Fire(String countyName, String date) {
         this.countyName = countyName;
         this.date = date;
     }
@@ -25,11 +22,11 @@ private Date date;
         this.countyName = countyName;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

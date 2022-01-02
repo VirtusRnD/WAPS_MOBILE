@@ -21,8 +21,10 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.SetOptions;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class PopUsername extends Activity {
@@ -39,16 +41,21 @@ public class PopUsername extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_username);
-        db = FirebaseFirestore.getInstance();
-        auth = FirebaseAuth.getInstance();
-        user = auth.getCurrentUser();
+
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
         int width = dm.widthPixels;
         int height = dm.heightPixels;
-
         getWindow().setLayout((int)(width*.8),(int)(height*.3));
+
+
+
+
+
+        db = FirebaseFirestore.getInstance();
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
         new_user_name = findViewById(R.id.newUserNameInput);
         confirm_password = findViewById(R.id.confirmPasswordInput);
         change_button = findViewById(R.id.changeButton);
@@ -64,38 +71,41 @@ public class PopUsername extends Activity {
 
                    query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                        @Override
-                       public synchronized void onComplete(@NonNull Task<QuerySnapshot> task) {
+                       public  void onComplete(@NonNull Task<QuerySnapshot> task) {
                            if(task.isSuccessful()){
                                for (DocumentSnapshot doc : task.getResult()){
-                                    if(doc.getString("email").equals(user.getEmail())){
+                                    if(doc.getId().equals(user.getUid())){
                                         username = doc.getString("username");
                                         password = doc.getString("password");
-                                        break;
+
+                                        if(new_user_name.getText().toString().equals(username)){
+                                            Toast.makeText(PopUsername.this,"New name must be different",Toast.LENGTH_SHORT).show();
+                                            new_user_name.setText("");
+                                        }
+                                        else if (!(confirm_password.getText().toString().equals(password))){
+                                            Toast.makeText(PopUsername.this,"Password is wrong",Toast.LENGTH_SHORT).show();
+                                            confirm_password.setText("");
+                                        }else{
+                                            HashMap<String,String> addUsername = new HashMap<>();
+                                            addUsername.put("username",new_user_name.getText().toString());
+                                            db.collection("users").document(user.getUid()).set(addUsername, SetOptions.merge()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    Toast.makeText(PopUsername.this,"Username successfully changed ",Toast.LENGTH_SHORT).show();
+                                                    finish();
+                                                }
+                                            });
+
+
+
+                                        }
+
                                     }
                                }
                            }
                        }
                    });
-                   if(new_user_name.getText().toString().equals(username)){
-                       Toast.makeText(PopUsername.this,"New name must be different",Toast.LENGTH_SHORT).show();
-                        new_user_name.setText("");
-                   }
-                   else if (!(confirm_password.getText().toString().trim().toLowerCase().equals(password.trim().toLowerCase()))){
-                       Toast.makeText(PopUsername.this,"Password is wrong",Toast.LENGTH_SHORT).show();
-                        confirm_password.setText("");
-                   }else{
-                       User addingUser = new User(new_user_name.getText().toString(),password,user.getEmail(),new ArrayList<>(),new ArrayList<>());
-                       db.collection("users").document(user.getUid()).set(addingUser).addOnCompleteListener(new OnCompleteListener<Void>() {
-                           @Override
-                           public void onComplete(@NonNull Task<Void> task) {
-                               Toast.makeText(PopUsername.this,"Username successfully changed ",Toast.LENGTH_SHORT).show();
-                               finish();
-                           }
-                       });
 
-
-
-                   }
                }
            }
        });
