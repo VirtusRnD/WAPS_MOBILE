@@ -23,33 +23,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!--ImageButton
-                android:id="@+id/button_settings"
-                android:src="@drawable/ic_android_settings"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp" /-->
-
-            <TextView
-                android:id="@+id/not_hist_title"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:background="@drawable/box_red"
-                android:text=" Notification History "
-                android:textSize="16sp"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                app:layout_constraintBottom_toTopOf="@+id/not_hist"
-                app:layout_constraintStart_toStartOf="@id/not_hist" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/not_hist"
+                app:layout_constraintBottom_toTopOf="@+id/not_hist1"
+                app:layout_constraintStart_toStartOf="@id/not_hist1" >
+                <TextView
+                    android:id="@+id/not_hist_title"
+                    android:text=" Notification History "
+                    android:textSize="16sp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:layout_marginStart="7dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/not_hist1"
                 android:background="@drawable/box_green"
 
                 android:layout_width="320dp"
@@ -61,33 +56,68 @@
 
                 android:layout_marginStart="45dp"
                 android:layout_marginTop="80dp"
-                android:layout_marginEnd="45dp"/>
+                android:layout_marginEnd="45dp"
+                android:orientation="vertical">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/not_hist"
 
-            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:layout_marginStart="7dp"/>
+            </LinearLayout>
+            <LinearLayout
                 android:id="@+id/daily_wildf_title"
+                android:orientation="horizontal"
                 android:background="@drawable/box_red"
-                android:text=" Daily Wildfires "
-                android:textSize="16sp"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                app:layout_constraintLeft_toLeftOf="@id/not_hist"
-                app:layout_constraintTop_toBottomOf="@id/not_hist"
+                app:layout_constraintStart_toStartOf="@id/not_hist1"
+                app:layout_constraintTop_toBottomOf="@id/not_hist1"
 
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:text=" Daily Wildfires "
+                    android:textSize="16sp"
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/daily_wildf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:layout_constraintLeft_toLeftOf="@id/not_hist"
+                    app:layout_constraintTop_toBottomOf="@id/not_hist"
+
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"/>
+            </LinearLayout>
+            <LinearLayout
                 android:background="@drawable/box_green"
 
-                android:layout_width="315dp"
+                android:layout_width="320dp"
                 android:layout_height="303dp"
 
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/not_hist"
-                app:layout_constraintLeft_toLeftOf="@id/not_hist"
-                app:layout_constraintTop_toBottomOf="@id/daily_wildf_title" />
+                app:layout_constraintEnd_toEndOf="@+id/not_hist1"
+                app:layout_constraintStart_toStartOf="@id/not_hist1"
+                app:layout_constraintTop_toBottomOf="@id/daily_wildf_title"
+                android:orientation="vertical">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/daily_wildf"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginTop="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginStart="7dp"/>
+            </LinearLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

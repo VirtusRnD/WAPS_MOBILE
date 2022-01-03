@@ -73,7 +73,7 @@ public class FriendsFragment extends Fragment {
 
 
     private void viewSettings() {
-        recyclerView = view.findViewById(R.id.firends_list);
+        recyclerView = view.findViewById(R.id.friends_list);
         friends = new ArrayList<>();
 
         friendRecyclerViewAdapter = new FriendRecyclerViewAdapter(friends);

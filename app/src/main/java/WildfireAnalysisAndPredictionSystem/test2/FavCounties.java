@@ -36,7 +36,7 @@ public class FavCounties extends AppCompatActivity implements CountyRecyclerView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fav_counties);
-        recyclerView = findViewById(R.id.firends_list);
+        recyclerView = findViewById(R.id.friends_list);
         ActionBar actionBar = getSupportActionBar();
         setTitle("Favorite Counties");
         actionBar.setDisplayHomeAsUpEnabled(true);
