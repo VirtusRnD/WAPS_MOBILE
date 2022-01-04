@@ -72,12 +72,12 @@ public class HomeFragment extends Fragment {
     }
 
     private void fillTheArrayNotifications() {
-        String firstPart = "There is a fire at ";
-        String secondPart = "county and at ";
+        String firstPart = "There was a fire in \n";
+        String secondPart = " at ";
         notifications.add(new TempNotifications(firstPart+"Ula"+secondPart+"14:53"));
-        notifications.add(new TempNotifications(firstPart+"Mentese"+secondPart+"16:26"));
+        notifications.add(new TempNotifications(firstPart+"Menteşe"+secondPart+"16:26"));
         notifications.add(new TempNotifications(firstPart+"Marmaris"+secondPart+"11:14"));
-        notifications.add(new TempNotifications(firstPart+"Yatagan"+secondPart+"17:48"));
+        notifications.add(new TempNotifications(firstPart+"Yatağan"+secondPart+"17:48"));
         notifications.add(new TempNotifications(firstPart+"Kavaklıdere"+secondPart+"13:05"));
         notifications.add(new TempNotifications(firstPart+"Bodrum"+secondPart+"09:56"));
         notifications.add(new TempNotifications(firstPart+"Dalaman"+secondPart+"12:41"));
@@ -105,7 +105,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void fillTheArrayDailyWildfires() {
-        String firstPart = "There is a fire at ";
+        String firstPart = "There was a fire in \n";
         dailyWildfires.add(new TempDailyWildfires(firstPart+"Ula"));
         dailyWildfires.add(new TempDailyWildfires(firstPart+"Menteşe"));
         dailyWildfires.add(new TempDailyWildfires(firstPart+"Marmaris"));
